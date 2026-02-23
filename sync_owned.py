@@ -204,7 +204,7 @@ def main():
     md.append("### HackTheBox\n")
     md.append(grid([img(v["img"], v["name"], v["difficulty"]) for v in state["htb_machines"].values()]))
     md.append("### TryHackMe\n")
-    md.append(grid([img(v["img"], v["name"], v["difficulty"]) for v in state["thm_rooms"].values()]))
+    md.append(grid([img(v["img"], v["name"], v["difficulty"]) for v in reversed(list(state["thm_rooms"].values()))]))
 
     insert_block(ABOUT_ME_FILE, "\n".join(md))
     logging.info("DONE. THM: %d | HTB: %d", len(state["thm_rooms"]), len(state["htb_machines"]))
