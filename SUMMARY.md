@@ -2,6 +2,10 @@
 
 * [ABOUT ME](README.md)
 
+## HackTheBox
+
+* [Soon](hackthebox/soon.md)
+
 ## CTF Writeups
 
 * [CyberNights 5](ctf-writeups/cybernights-5/README.md)
@@ -12,7 +16,6 @@
   * [Notey](ctf-writeups/bhmea24-quals/notey.md)
   * [Watermelon](ctf-writeups/bhmea24-quals/watermelon.md)
 * [Fawazeer Cyber - L33T Challenge writeup](ctf-writeups/fawazeer-cyber-l33t-challenge-writeup.md)
-* [HackTheBox](ctf-writeups/hackthebox.md)
 
 ## Security Research
 

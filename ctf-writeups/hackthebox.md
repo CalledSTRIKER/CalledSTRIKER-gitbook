@@ -1,3 +1,0 @@
-# HackTheBox
-
-Coming soon..
