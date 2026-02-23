@@ -205,7 +205,7 @@ def main():
 
     # ---------- BUILD MD ----------
     md = []
-    md.append("## 💀 Owned Machines\n")
+    md.append("## 🗡️ Owned Machines\n")
     md.append("### HackTheBox\n")
     md.append(grid([img(v["img"], v["name"], v["difficulty"]) for v in state["htb_machines"].values()]))
     md.append("### TryHackMe\n")
