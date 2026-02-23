@@ -67,6 +67,9 @@ DIFFICULTY_COLOR = {
     "unknown": (33, 150, 243)
 }
 
+DIFFICULTY = [ "easy",  "medium", "hard", "insane",  ]
+
+
 def add_border(src: Path, dst: Path, diff: str, border=8, radius=12):
 
     color = DIFFICULTY_COLOR.get(diff.lower(), DIFFICULTY_COLOR["unknown"])
@@ -165,6 +168,8 @@ def main():
         name = r["title"]
         diff = r["difficulty"]
         img_url = r["imageURL"]
+        if diff.lower() not in DIFFICULTY:
+            continue
 
         raw_path = THM_ASSETS / f"{slug(name)}.png"
         final_path = THM_ASSETS / f"{slug(name)}.png"
