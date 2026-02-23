@@ -2,7 +2,7 @@
 icon: swords
 ---
 
-# ABOUT ME
+# ABOUT MEZ
 
 
 
