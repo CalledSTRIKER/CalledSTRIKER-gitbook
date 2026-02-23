@@ -2,10 +2,7 @@
 icon: swords
 ---
 
-# TESTETSETAAAAAST
-
-tetsststststststs
-
+# ABOUT ME
 
 <div align="center"><img src="https://readme-typing-svg.herokuapp.com/?font=Fira+Code&#x26;weight=600&#x26;size=24&#x26;pause=1000&#x26;color=AA0A0A&#x26;center=true&#x26;vCenter=true&#x26;width=500&#x26;lines=PENETRATION+TESTER;OFFENSIVE+SECURITY+RESEARCHER;WEB+SECURITY+EXPERT" alt=""></div>
 
@@ -19,3 +16,6 @@ tetsststststststs
 | :----------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------: |
 
 <div align="center"><img src="https://img.shields.io/badge/Burp_Suite-FF6633?style=for-the-badge&#x26;logo=Burp-Suite&#x26;logoColor=white" alt=""> <img src="https://img.shields.io/badge/Metasploit-7B0000?style=for-the-badge&#x26;logo=metasploit&#x26;logoColor=white" alt=""> <img src="https://img.shields.io/badge/Kali_Linux-557C94?style=for-the-badge&#x26;logo=kali-linux&#x26;logoColor=white" alt=""> <img src="https://img.shields.io/badge/OWASP-37474F?style=for-the-badge&#x26;logo=owasp&#x26;logoColor=white" alt=""> <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&#x26;logo=python&#x26;logoColor=white" alt=""> <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&#x26;logo=docker&#x26;logoColor=white" alt=""></div>
+
+---------------------------------------------------------------------
+
