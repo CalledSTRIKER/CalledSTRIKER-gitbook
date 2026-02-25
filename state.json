@@ -281,6 +281,11 @@
       "name": "Lookback",
       "difficulty": "Easy",
       "img": "assets/thm/Lookback.png"
+    },
+    "attacktivedirectory": {
+      "name": "Attacktive Directory",
+      "difficulty": "Medium",
+      "img": "assets/thm/Attacktive_Directory.png"
     }
   }
 }
