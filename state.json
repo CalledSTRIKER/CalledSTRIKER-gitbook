@@ -276,11 +276,6 @@
       "name": "VulnNet",
       "difficulty": "Medium",
       "img": "assets/thm/VulnNet.png"
-    },
-    "lookback": {
-      "name": "Lookback",
-      "difficulty": "Easy",
-      "img": "assets/thm/Lookback.png"
     }
   }
 }
