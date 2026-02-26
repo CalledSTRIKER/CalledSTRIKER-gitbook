@@ -30,6 +30,7 @@ icon: swords
 | <div align='center'><img src='assets/htb/Era.png' width='110'/><br><sub>Era · Medium</sub></div> | <div align='center'><img src='assets/htb/TwoMillion.png' width='110'/><br><sub>TwoMillion · Easy</sub></div> | <div align='center'><img src='assets/htb/Conversor.png' width='110'/><br><sub>Conversor · Easy</sub></div> | <div align='center'><img src='assets/htb/Imagery.png' width='110'/><br><sub>Imagery · Medium</sub></div> |
 | <div align='center'><img src='assets/htb/Planning.png' width='110'/><br><sub>Planning · Easy</sub></div> | <div align='center'><img src='assets/htb/Previous.png' width='110'/><br><sub>Previous · Medium</sub></div> | <div align='center'><img src='assets/htb/CodePartTwo.png' width='110'/><br><sub>CodePartTwo · Easy</sub></div> | <div align='center'><img src='assets/htb/Expressway.png' width='110'/><br><sub>Expressway · Easy</sub></div> |
 | <div align='center'><img src='assets/htb/HackNet.png' width='110'/><br><sub>HackNet · Medium</sub></div> | <div align='center'><img src='assets/htb/Soulmate.png' width='110'/><br><sub>Soulmate · Easy</sub></div> | <div align='center'><img src='assets/htb/Artificial.png' width='110'/><br><sub>Artificial · Easy</sub></div> | <div align='center'><img src='assets/htb/Cap.png' width='110'/><br><sub>Cap · Easy</sub></div> |
+| <div align='center'><img src='assets/htb/Eighteen.png' width='110'/><br><sub>Eighteen · Easy</sub></div> |
 
 ### TryHackMe
 
