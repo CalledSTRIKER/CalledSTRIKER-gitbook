@@ -286,6 +286,11 @@
       "name": "Attacktive Directory",
       "difficulty": "Medium",
       "img": "assets/thm/Attacktive_Directory.png"
+    },
+    "adbadsuccessor": {
+      "name": "AD: BadSuccessor",
+      "difficulty": "Medium",
+      "img": "assets/thm/AD__BadSuccessor.png"
     }
   }
 }
