@@ -147,7 +147,7 @@ You will see many hashes, which are current keys and previous keys, the last one
 
 ### Option C: Dumping the Entire Domain via [dMSASync.py](https://gist.github.com/snovvcrash/a1ae180ab3b49acb43da8fd34e7e93df)
 
-You can automate this to loop through every user and computer, set them as the predecessor, and extract their `previous-keys`.
+You can use this script to automate this to loop through every user and computer, set them as the predecessor, and extract their `previous-keys`.
 
 **Setup & Execution:**
 
