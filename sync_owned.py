@@ -150,7 +150,7 @@ def img(src, name, difficulty, source):
 
     if source == "htb":
        label = f"{name} · {difficulty}"
-       padding = "&nbsp;" * 4
+       padding1 = "&nbsp;" * 13
     else:
        label = f"{name} <br> {difficulty}"
        padding = ''
@@ -231,7 +231,14 @@ def main():
 
     # ---------- BUILD MD ----------
     md = []
-    md.append("## 🗡️ Owned Machines\n")
+    md.append("## 🗡️ Owned Machines")
+    md.append('''
+![Easy](https://img.shields.io/badge/■_Easy-4CAF50?style=flat-square&logoColor=white)
+![Medium](https://img.shields.io/badge/■_Medium-FFC107?style=flat-square&logoColor=white)
+![Hard](https://img.shields.io/badge/■_Hard-F44336?style=flat-square&logoColor=white)
+![Insane](https://img.shields.io/badge/■_Insane-9C27B0?style=flat-square&logoColor=white)
+''')
+    
     md.append("### HackTheBox\n")
     md.append(grid([img(v["img"], v["name"], v["difficulty"], "htb") for v in reversed(list(state["htb_machines"].values()))]))
     md.append("### TryHackMe\n")
