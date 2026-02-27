@@ -1,10 +1,5 @@
 {
   "htb_machines": {
-    "805": {
-      "name": "Eighteen",
-      "difficulty": "Easy",
-      "img": "assets/htb/Eighteen.png"
-    },
     "841": {
       "name": "Interpreter",
       "difficulty": "Medium",
