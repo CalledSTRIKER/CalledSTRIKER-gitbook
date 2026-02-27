@@ -23,6 +23,7 @@ ABOUT_ME_FILE = Path("README.md")
 ASSETS_DIR = Path("assets")
 HTB_ASSETS = ASSETS_DIR / "htb"
 THM_ASSETS = ASSETS_DIR / "thm"
+ASSETS_DIR.mkdir(parents=True, exist_ok=True)
 HTB_ASSETS.mkdir(parents=True, exist_ok=True)
 THM_ASSETS.mkdir(parents=True, exist_ok=True)
 
