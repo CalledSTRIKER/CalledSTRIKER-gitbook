@@ -2,7 +2,7 @@
 
 ## BadSuccessor?
 
-Recent security research by Yuval Gordon at Akamai revealed a critical vulnerability in Windows Server 2025 known as **BadSuccessor**. Any Active Directory environment with at least one Windows Server 2025 Domain Controller may be affected. This issue enables a low‑privileged attacker to obtain Domain Admin–level privileges without modifying privileged accounts or triggering typical security alerts.
+Recent security research at Akamai revealed a critical vulnerability in Windows Server 2025 known as **BadSuccessor**. Any Active Directory environment with at least one Windows Server 2025 Domain Controller may be affected. This issue enables a low‑privileged attacker to obtain Domain Admin–level privileges without modifying privileged accounts or triggering typical security alerts.
 
 The vulnerability stems from abuse of the Delegated Managed Service Account (dMSA) migration mechanism. An attacker who can create and control a dMSA can manually configure the `msDS-ManagedAccountPrecededByLink` attribute to reference a highly privileged account (such as Administrator) and set `msDS-DelegatedMSAState` to 2. When authentication occurs, the Key Distribution Center (KDC) incorrectly processes this migration relationship and inserts the referenced account’s SID into the Kerberos PAC.
 
