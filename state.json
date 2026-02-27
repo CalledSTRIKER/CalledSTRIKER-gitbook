@@ -99,11 +99,6 @@
       "name": "Cap",
       "difficulty": "Easy",
       "img": "assets/htb/Cap.png"
-    },
-    "805": {
-      "name": "Eighteen",
-      "difficulty": "Easy",
-      "img": "assets/htb/Eighteen.png"
     }
   },
   "thm_rooms": {
