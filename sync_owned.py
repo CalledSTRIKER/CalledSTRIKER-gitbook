@@ -150,10 +150,11 @@ def img(src, name, difficulty, source):
 
     if source == "htb":
        label = f"{name} · {difficulty}"
-       padding1 = "&nbsp;" * 13
+       padding = "&nbsp;" * 13
     else:
        label = f"{name} <br> {difficulty}"
        padding = ''
+        
     return f"<div align='center'><img src='{src}' width='110'/><br><b>{padding}{label}{padding}</b></div>"
 
 def grid(items):
