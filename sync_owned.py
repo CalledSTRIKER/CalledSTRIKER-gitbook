@@ -147,7 +147,10 @@ def derive_htb(activity):
 
 # ---------- MARKDOWN ----------
 def img(src, name, difficulty):
-    return f"<div align='center' style='min-width:200px'><img src='{src}' width='110'/><br><sub>{name} · {difficulty}</sub></div>"
+    label = f"{name} · {difficulty}"
+    # Pad to match longest expected label (~40 chars)
+    padding = "&nbsp;" * max(0, (40 - len(label)) // 2)
+    return f"<div align='center' style='min-width:400px'><img src='{src}' width='110'/><br><b>{padding}{label}{padding}</b></div>"
 
 def grid(items):
     if not items:
