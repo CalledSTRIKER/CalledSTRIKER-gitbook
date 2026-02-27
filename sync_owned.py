@@ -3,6 +3,7 @@
 import os, json, logging, re
 from pathlib import Path
 import requests
+import cairosvg
 from PIL import Image, ImageDraw
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
@@ -52,8 +53,22 @@ def safe_get(url, headers=None, params=None):
 def download(url, dest: Path):
     if not url or dest.exists():
         return
+
     r = safe_get(url)
-    dest.write_bytes(r.content)
+    content_type = r.headers.get("Content-Type", "").lower()
+
+    # Detect SVG
+    is_svg = (
+        url.lower().endswith(".svg")
+        or "image/svg" in content_type
+        or b"<svg" in r.content[:200]
+    )
+
+    if is_svg:
+        png_bytes = cairosvg.svg2png(bytestring=r.content)
+        dest.write_bytes(png_bytes)
+    else:
+        dest.write_bytes(r.content)
 
 def slug(s):
     return re.sub(r"[^a-zA-Z0-9_-]", "_", s)
@@ -72,11 +87,11 @@ DIFFICULTY = [ "easy",  "medium", "hard", "insane",  ]
 
 def add_border(src: Path, dst: Path, diff: str, border=8, radius=12):
 
+    TARGET_SIZE = 120
+
+    img = Image.open(src).convert("RGBA")
+    img = img.resize((TARGET_SIZE, TARGET_SIZE), Image.LANCZOS)
     color = DIFFICULTY_COLOR.get(diff.lower(), DIFFICULTY_COLOR["unknown"])
-    try:
-        img = Image.open(src).convert("RGBA")
-    except Exception:
-        img = Image.new("RGBA", (120, 120), (0,0,0,0))
     w,h = img.size
     nw, nh = w + 2*border, h + 2*border
     mask = Image.new("L", (nw, nh), 0)
