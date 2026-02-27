@@ -16,7 +16,7 @@ You can read the full technical blog from [Akamai](https://www.akamai.com/blog/s
 
 ## Introduction
 
-Over the past few days, I explored the BadSuccessor attack through hands‑on practice in TryHackMe and Hack The Box environments. After extensive research and experimentation, I identified multiple practical exploitation paths. This article documents those approaches and explains how they can be leveraged in real attack scenarios.
+Over the past few days, I explored the BadSuccessor attack through vulnerable environments. After extensive research and experimentation, I identified multiple practical exploitation paths. This article documents those approaches and explains how they can be leveraged in real attack scenarios.
 
 Below are three different ways to exploit this vulnerability.
 
