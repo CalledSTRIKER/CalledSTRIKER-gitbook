@@ -2,6 +2,10 @@
 
 * [ABOUT ME](README.md)
 
+## Security Research
+
+* [BadSuccessor](security-research/badsuccessor.md)
+
 ## HackTheBox
 
 * [Soon](hackthebox/soon.md)
@@ -16,7 +20,3 @@
   * [Notey](ctf-writeups/bhmea24-quals/notey.md)
   * [Watermelon](ctf-writeups/bhmea24-quals/watermelon.md)
 * [Fawazeer Cyber - L33T Challenge writeup](ctf-writeups/fawazeer-cyber-l33t-challenge-writeup.md)
-
-## Security Research
-
-* [BadSuccessor](security-research/badsuccessor.md)
