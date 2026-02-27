@@ -1,0 +1,301 @@
+{
+  "htb_machines": {
+    "805": {
+      "name": "Eighteen",
+      "difficulty": "Easy",
+      "img": "assets/htb/Eighteen.png"
+    },
+    "841": {
+      "name": "Interpreter",
+      "difficulty": "Medium",
+      "img": "assets/htb/Interpreter.png"
+    },
+    "814": {
+      "name": "MonitorsFour",
+      "difficulty": "Easy",
+      "img": "assets/htb/MonitorsFour.png"
+    },
+    "835": {
+      "name": "WingData",
+      "difficulty": "Easy",
+      "img": "assets/htb/WingData.png"
+    },
+    "796": {
+      "name": "Giveback",
+      "difficulty": "Medium",
+      "img": "assets/htb/Giveback.png"
+    },
+    "832": {
+      "name": "Pterodactyl",
+      "difficulty": "Medium",
+      "img": "assets/htb/Pterodactyl.png"
+    },
+    "829": {
+      "name": "Facts",
+      "difficulty": "Easy",
+      "img": "assets/htb/Facts.png"
+    },
+    "820": {
+      "name": "Browsed",
+      "difficulty": "Medium",
+      "img": "assets/htb/Browsed.png"
+    },
+    "811": {
+      "name": "Gavel",
+      "difficulty": "Medium",
+      "img": "assets/htb/Gavel.png"
+    },
+    "683": {
+      "name": "Era",
+      "difficulty": "Medium",
+      "img": "assets/htb/Era.png"
+    },
+    "547": {
+      "name": "TwoMillion",
+      "difficulty": "Easy",
+      "img": "assets/htb/TwoMillion.png"
+    },
+    "787": {
+      "name": "Conversor",
+      "difficulty": "Easy",
+      "img": "assets/htb/Conversor.png"
+    },
+    "751": {
+      "name": "Imagery",
+      "difficulty": "Medium",
+      "img": "assets/htb/Imagery.png"
+    },
+    "660": {
+      "name": "Planning",
+      "difficulty": "Easy",
+      "img": "assets/htb/Planning.png"
+    },
+    "701": {
+      "name": "Previous",
+      "difficulty": "Medium",
+      "img": "assets/htb/Previous.png"
+    },
+    "692": {
+      "name": "CodePartTwo",
+      "difficulty": "Easy",
+      "img": "assets/htb/CodePartTwo.png"
+    },
+    "736": {
+      "name": "Expressway",
+      "difficulty": "Easy",
+      "img": "assets/htb/Expressway.png"
+    },
+    "727": {
+      "name": "HackNet",
+      "difficulty": "Medium",
+      "img": "assets/htb/HackNet.png"
+    },
+    "721": {
+      "name": "Soulmate",
+      "difficulty": "Easy",
+      "img": "assets/htb/Soulmate.png"
+    },
+    "668": {
+      "name": "Artificial",
+      "difficulty": "Easy",
+      "img": "assets/htb/Artificial.png"
+    },
+    "351": {
+      "name": "Cap",
+      "difficulty": "Easy",
+      "img": "assets/htb/Cap.png"
+    }
+  },
+  "thm_rooms": {
+    "mrrobot": {
+      "name": "Mr Robot CTF",
+      "difficulty": "Medium",
+      "img": "assets/thm/Mr_Robot_CTF.png"
+    },
+    "basicpentestingjt": {
+      "name": "Basic Pentesting",
+      "difficulty": "Easy",
+      "img": "assets/thm/Basic_Pentesting.png"
+    },
+    "vulnversity": {
+      "name": "Vulnversity",
+      "difficulty": "Easy",
+      "img": "assets/thm/Vulnversity.png"
+    },
+    "dvwa": {
+      "name": "DVWA",
+      "difficulty": "Easy",
+      "img": "assets/thm/DVWA.png"
+    },
+    "ice": {
+      "name": "Ice",
+      "difficulty": "Easy",
+      "img": "assets/thm/Ice.png"
+    },
+    "attacktivedirectory": {
+      "name": "Attacktive Directory",
+      "difficulty": "Medium",
+      "img": "assets/thm/Attacktive_Directory.png"
+    },
+    "hackernote": {
+      "name": "hackerNote",
+      "difficulty": "Medium",
+      "img": "assets/thm/hackerNote.png"
+    },
+    "introtonetworking": {
+      "name": "Introductory Networking",
+      "difficulty": "Easy",
+      "img": "assets/thm/Introductory_Networking.png"
+    },
+    "networkservices": {
+      "name": "Network Services",
+      "difficulty": "Easy",
+      "img": "assets/thm/Network_Services.png"
+    },
+    "blaster": {
+      "name": "Blaster",
+      "difficulty": "Easy",
+      "img": "assets/thm/Blaster.png"
+    },
+    "source": {
+      "name": "Source",
+      "difficulty": "Easy",
+      "img": "assets/thm/Source.png"
+    },
+    "poster": {
+      "name": "Poster",
+      "difficulty": "Easy",
+      "img": "assets/thm/Poster.png"
+    },
+    "furthernmap": {
+      "name": "Nmap",
+      "difficulty": "Easy",
+      "img": "assets/thm/Nmap.png"
+    },
+    "badbyte": {
+      "name": "Badbyte",
+      "difficulty": "Easy",
+      "img": "assets/thm/Badbyte.png"
+    },
+    "vulnnet1": {
+      "name": "VulnNet",
+      "difficulty": "Medium",
+      "img": "assets/thm/VulnNet.png"
+    },
+    "vulnnetroasted": {
+      "name": "VulnNet: Roasted",
+      "difficulty": "Easy",
+      "img": "assets/thm/VulnNet__Roasted.png"
+    },
+    "dejavu": {
+      "name": "Deja Vu",
+      "difficulty": "Easy",
+      "img": "assets/thm/Deja_Vu.png"
+    },
+    "walkinganapplication": {
+      "name": "Walking An Application",
+      "difficulty": "Easy",
+      "img": "assets/thm/Walking_An_Application.png"
+    },
+    "pentestingfundamentals": {
+      "name": "Pentesting Fundamentals",
+      "difficulty": "Easy",
+      "img": "assets/thm/Pentesting_Fundamentals.png"
+    },
+    "contentdiscovery": {
+      "name": "Content Discovery",
+      "difficulty": "Easy",
+      "img": "assets/thm/Content_Discovery.png"
+    },
+    "subdomainenumeration": {
+      "name": "Subdomain Enumeration",
+      "difficulty": "Easy",
+      "img": "assets/thm/Subdomain_Enumeration.png"
+    },
+    "authenticationbypass": {
+      "name": "Authentication Bypass",
+      "difficulty": "Easy",
+      "img": "assets/thm/Authentication_Bypass.png"
+    },
+    "passiverecon": {
+      "name": "Passive Reconnaissance",
+      "difficulty": "Easy",
+      "img": "assets/thm/Passive_Reconnaissance.png"
+    },
+    "idor": {
+      "name": "IDOR",
+      "difficulty": "Easy",
+      "img": "assets/thm/IDOR.png"
+    },
+    "breachingad": {
+      "name": "Breaching Active Directory",
+      "difficulty": "Medium",
+      "img": "assets/thm/Breaching_Active_Directory.png"
+    },
+    "adenumeration": {
+      "name": "Enumerating Active Directory",
+      "difficulty": "Medium",
+      "img": "assets/thm/Enumerating_Active_Directory.png"
+    },
+    "offensivesecurityintro": {
+      "name": "Offensive Security Intro",
+      "difficulty": "Easy",
+      "img": "assets/thm/Offensive_Security_Intro.png"
+    },
+    "introwebapplicationsecurity": {
+      "name": "Web Application Security",
+      "difficulty": "Easy",
+      "img": "assets/thm/Web_Application_Security.png"
+    },
+    "lateralmovementandpivoting": {
+      "name": "Lateral Movement and Pivoting",
+      "difficulty": "Easy",
+      "img": "assets/thm/Lateral_Movement_and_Pivoting.png"
+    },
+    "exploitingad": {
+      "name": "Exploiting Active Directory",
+      "difficulty": "Medium",
+      "img": "assets/thm/Exploiting_Active_Directory.png"
+    },
+    "defensivesecurityintro": {
+      "name": "Defensive Security Intro",
+      "difficulty": "Easy",
+      "img": "assets/thm/Defensive_Security_Intro.png"
+    },
+    "winadbasics": {
+      "name": "Active Directory Basics",
+      "difficulty": "Easy",
+      "img": "assets/thm/Active_Directory_Basics.png"
+    },
+    "capture": {
+      "name": "Capture!",
+      "difficulty": "Easy",
+      "img": "assets/thm/Capture_.png"
+    },
+    "lookback": {
+      "name": "Lookback",
+      "difficulty": "Easy",
+      "img": "assets/thm/Lookback.png"
+    },
+    "soupedecode01": {
+      "name": "Soupedecode 01",
+      "difficulty": "Easy",
+      "img": "assets/thm/Soupedecode_01.png"
+    },
+    "memoryanalysisintroduction": {
+      "name": "Memory Analysis Introduction",
+      "difficulty": "Easy",
+      "img": "assets/thm/Memory_Analysis_Introduction.png"
+    },
+    "adbadsuccessor": {
+      "name": "AD: BadSuccessor",
+      "difficulty": "Medium",
+      "img": "assets/thm/AD__BadSuccessor.png"
+    },
+    "volatilityessentials": {
+      "name": "Volatility Essentials",
+      "difficulty": "Medium",
+      "img": "assets/thm/Volatility_Essentials.png"
+    }
+  }
+}
