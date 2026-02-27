@@ -156,8 +156,10 @@ def grid(items):
     for i in range(0, len(items), 4):
         chunk = items[i:i+4]
         # Pad incomplete rows with empty cells so all rows have 4 columns
+        EMPTY_CELL = "<div align='center'><img src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' width='110'/><br><sub>&nbsp;</sub></div>"
+
         while len(chunk) < 4:
-            chunk.append("")
+            chunk.append(EMPTY_CELL)
         rows.append("| " + " | ".join(chunk) + " |")
         if i == 0:
             rows.append("| " + " | ".join(["---"] * 4) + " |")
