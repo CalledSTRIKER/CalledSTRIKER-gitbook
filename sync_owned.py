@@ -215,7 +215,10 @@ def main():
         download(avatar, raw_path)
         add_border(raw_path, final_path, diff)
 
-        state["htb_machines"][str(mid)] = {"name": name, "difficulty": diff.title(), "img": final_path.as_posix()}
+        state["htb_machines"] = {
+    str(mid): {"name": name, "difficulty": diff.title(), "img": final_path.as_posix()},
+    **state["htb_machines"]
+}
         
     save_state(state)
 
@@ -230,7 +233,7 @@ def main():
 ''')
     
     md.append("### HackTheBox\n")
-    md.append(grid([img(v["img"], v["name"], v["difficulty"]) for v in reversed(list(state["htb_machines"].values()))]))
+    md.append(grid([img(v["img"], v["name"], v["difficulty"]) for v in state["htb_machines"].values()]))
     md.append("### TryHackMe\n")
     md.append(grid([img(v["img"], v["name"], v["difficulty"]) for v in reversed(list(state["thm_rooms"].values()))]))
 
