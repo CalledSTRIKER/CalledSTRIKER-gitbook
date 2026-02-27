@@ -147,7 +147,7 @@ def derive_htb(activity):
 
 # ---------- MARKDOWN ----------
 def img(src, name, difficulty):
-    return f"<div align='center'><img src='{src}' width='110'/><br><sub>{name} · {difficulty}</sub></div>"
+    return f"<div align='center' style='min-width:200px'><img src='{src}' width='110'/><br><sub>{name} · {difficulty}</sub></div>"
 
 def grid(items):
     if not items:
@@ -155,14 +155,9 @@ def grid(items):
     rows = []
     for i in range(0, len(items), 4):
         chunk = items[i:i+4]
-        # Pad incomplete rows with empty cells so all rows have 4 columns
-        EMPTY_CELL = "<div align='center'><img src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' width='110'/><br><sub>&nbsp;</sub></div>"
-
-        while len(chunk) < 4:
-            chunk.append(EMPTY_CELL)
         rows.append("| " + " | ".join(chunk) + " |")
         if i == 0:
-            rows.append("| " + " | ".join(["---"] * 4) + " |")
+            rows.append("| " + " | ".join(["---"] * len(chunk)) + " |")
     return "\n".join(rows) + "\n"
 
 START = "<!-- OWNED_SECTION_START -->"
