@@ -146,11 +146,15 @@ def derive_htb(activity):
     return owned_machines
 
 # ---------- MARKDOWN ----------
-def img(src, name, difficulty):
-    label = f"{name} · {difficulty}"
-    # Pad to match longest expected label (~40 chars)
-    padding = "&nbsp;" * max(0, (40 - len(label)) // 2)
-    return f"<div align='center' style='min-width:400px'><img src='{src}' width='110'/><br><b>{padding}{label}{padding}</b></div>"
+def img(src, name, difficulty, source):
+
+    if source == "htb":
+       label = f"{name} · {difficulty}"
+       padding = "&nbsp;" * 4
+    else:
+       label = f"{name} <br> {difficulty}"
+       padding = ''
+    return f"<div align='center'><img src='{src}' width='110'/><br><b>{padding}{label}{padding}</b></div>"
 
 def grid(items):
     if not items:
@@ -229,9 +233,9 @@ def main():
     md = []
     md.append("## 🗡️ Owned Machines\n")
     md.append("### HackTheBox\n")
-    md.append(grid([img(v["img"], v["name"], v["difficulty"]) for v in reversed(list(state["htb_machines"].values()))]))
+    md.append(grid([img(v["img"], v["name"], v["difficulty"], "htb") for v in reversed(list(state["htb_machines"].values()))]))
     md.append("### TryHackMe\n")
-    md.append(grid([img(v["img"], v["name"], v["difficulty"]) for v in reversed(list(state["thm_rooms"].values()))]))
+    md.append(grid([img(v["img"], v["name"], v["difficulty"], "thm") for v in reversed(list(state["thm_rooms"].values()))]))
 
     insert_block(ABOUT_ME_FILE, "\n".join(md))
     logging.info("DONE. THM: %d | HTB: %d", len(state["thm_rooms"]), len(state["htb_machines"]))
