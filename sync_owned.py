@@ -154,9 +154,12 @@ def grid(items):
     rows = []
     for i in range(0, len(items), 4):
         chunk = items[i:i+4]
+        # Pad incomplete rows with empty cells so all rows have 4 columns
+        while len(chunk) < 4:
+            chunk.append("")
         rows.append("| " + " | ".join(chunk) + " |")
         if i == 0:
-            rows.append("| " + " | ".join(["---"] * len(chunk)) + " |")
+            rows.append("| " + " | ".join(["---"] * 4) + " |")
     return "\n".join(rows) + "\n"
 
 START = "<!-- OWNED_SECTION_START -->"
