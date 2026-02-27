@@ -222,7 +222,7 @@ def main():
         download(avatar, raw_path)
         add_border(raw_path, final_path, diff)
 
-        state["htb_machines"][str(mid)] = {"name": name, "difficulty": diff.title(), "img": final_path.as_posix()}}
+        state["htb_machines"][str(mid)] = {"name": name, "difficulty": diff.title(), "img": final_path.as_posix()}
         
     save_state(state)
 
