@@ -19,4 +19,4 @@
 
 ## Security Research
 
-* [Soon](security-research/soon.md)
+* [BadSuccessor](security-research/soon.md)
