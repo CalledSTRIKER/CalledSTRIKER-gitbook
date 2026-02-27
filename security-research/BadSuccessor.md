@@ -1,4 +1,3 @@
-# Mastering BadSuccessor: 3 Ways to Exploit dMSA for PrivEsc
 
 ## BadSuccessor?
 
