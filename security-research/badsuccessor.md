@@ -10,7 +10,7 @@ The **Kerberos PAC (Privilege Attribute Certificate)** is the authorization data
 
 The only prerequisite for exploitation is the ability to create child objects within an Organizational Unit (OU), allowing the attacker to create and manage a dMSA.
 
-![3_dMSA abuse (BadSuccessor)_bads](https://github.com/user-attachments/assets/989535a5-9854-422b-b129-eebc9082a4c4)
+![Full attack flow](https://github.com/user-attachments/assets/989535a5-9854-422b-b129-eebc9082a4c4)
 
 You can read the full technical blog from [Akamai](https://www.akamai.com/blog/security-research/abusing-dmsa-for-privilege-escalation-in-active-directory).
 
@@ -115,7 +115,7 @@ Set-ADServiceAccount -Identity badpcDMSA -Replace @{
 
 When you request a TGT for a dMSA, the KDC also issues a `KERB-DMSA-KEY-PACKAGE` structure. This structure contains `current-keys` (the dMSA's keys) and `previous-keys` (the superseded account's NTLM hash which is in our case the `Administrator hash`). This allows you to extract the hash of any account in the domain.
 
-![7_dMSA abuse (BadSuccessor)_bads](https://github.com/user-attachments/assets/de511868-61d8-4283-abbb-67ac68b0fb20)
+![The KERB-DMSA-KEY-PACKAGE structure](https://github.com/user-attachments/assets/de511868-61d8-4283-abbb-67ac68b0fb20)
 
 ### Option A: Using Rubeus #PR 204
 
