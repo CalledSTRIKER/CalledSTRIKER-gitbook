@@ -100,12 +100,6 @@
       "difficulty": "Medium",
       "img": "assets/htb/Interpreter.png"
     },
-    "805": {
-      "name": "Eighteen",
-      "difficulty": "Easy",
-      "img": "assets/htb/Eighteen.png"
-    }
-  },
   "thm_rooms": {
     "mrrobot": {
       "name": "Mr Robot CTF",
