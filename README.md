@@ -22,10 +22,10 @@ icon: swords
 <!-- OWNED_SECTION_START -->
 ## 🗡️ Owned Machines
 
-![Easy](https://img.shields.io/badge/■_Easy-4CAF50?style=flat-square&logoColor=white)
-![Medium](https://img.shields.io/badge/■_Medium-FFC107?style=flat-square&logoColor=white)
-![Hard](https://img.shields.io/badge/■_Hard-F44336?style=flat-square&logoColor=white)
-![Insane](https://img.shields.io/badge/■_Insane-9C27B0?style=flat-square&logoColor=white)
+![](https://img.shields.io/badge/■_Easy-4CAF50?style=flat-square&logoColor=white)
+![](https://img.shields.io/badge/■_Medium-FFC107?style=flat-square&logoColor=white)
+![](https://img.shields.io/badge/■_Hard-F44336?style=flat-square&logoColor=white)
+![](https://img.shields.io/badge/■_Insane-9C27B0?style=flat-square&logoColor=white)
 
 ### HackTheBox
 
