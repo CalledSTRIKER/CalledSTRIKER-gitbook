@@ -296,6 +296,11 @@
       "name": "Volatility Essentials",
       "difficulty": "Medium",
       "img": "assets/thm/Volatility_Essentials.png"
+    },
+    "services": {
+      "name": "Services",
+      "difficulty": "Medium",
+      "img": "assets/thm/Services.png"
     }
   }
 }
