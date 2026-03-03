@@ -301,6 +301,11 @@
       "name": "Services",
       "difficulty": "Medium",
       "img": "assets/thm/Services.png"
+    },
+    "redisl33t": {
+      "name": "Red",
+      "difficulty": "Easy",
+      "img": "assets/thm/Red.png"
     }
   }
 }
