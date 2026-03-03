@@ -306,6 +306,11 @@
       "name": "Red",
       "difficulty": "Easy",
       "img": "assets/thm/Red.png"
+    },
+    "attackingkerberos": {
+      "name": "Attacking Kerberos",
+      "difficulty": "Easy",
+      "img": "assets/thm/Attacking_Kerberos.png"
     }
   }
 }
