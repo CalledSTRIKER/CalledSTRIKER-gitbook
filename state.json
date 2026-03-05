@@ -311,6 +311,11 @@
       "name": "Attacking Kerberos",
       "difficulty": "Easy",
       "img": "assets/thm/Attacking_Kerberos.png"
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "difficulty": "Hard",
+      "img": "assets/thm/Enterprise.png"
     }
   }
 }
