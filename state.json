@@ -1,5 +1,10 @@
 {
   "htb_machines": {
+    "844": {
+      "name": "Pirate",
+      "difficulty": "Hard",
+      "img": "assets/htb/Pirate.png"
+    },
     "805": {
       "name": "Eighteen",
       "difficulty": "Easy",
