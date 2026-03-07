@@ -6,11 +6,16 @@ icon: swords
 
 <div align="center"><img src="https://readme-typing-svg.herokuapp.com/?font=Fira+Code&#x26;weight=600&#x26;size=24&#x26;pause=1000&#x26;color=AA0A0A&#x26;center=true&#x26;vCenter=true&#x26;width=500&#x26;lines=PENETRATION+TESTER;OFFENSIVE+SECURITY+RESEARCHER;WEB+SECURITY+EXPERT" alt=""></div>
 
-<figure><img src="https://raw.githubusercontent.com/ThatYonko/ThatYonko/refs/heads/main/assets/htb-stats.svg" alt="" width="563"><figcaption></figcaption></figure>
+<figure>
+<img src="https://raw.githubusercontent.com/ThatYonko/ThatYonko/refs/heads/main/assets/htb-stats.svg" width="563">
+</figure>
 
-<figure><img src="https://raw.githubusercontent.com/ThatYonko/ThatYonko/refs/heads/main/assets/thm-stats.svg" alt=""><figcaption></figcaption></figure>
-
-***
+<figure>
+<img src="https://raw.githubusercontent.com/ThatYonko/ThatYonko/refs/heads/main/assets/thm-stats.svg">
+<a href="https://github.com/ThatYonko" style="margin-left:10px;">
+<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white">
+</a>
+</figure>
 
 | <p><img src="https://github.com/user-attachments/assets/b144a205-e91c-4ee9-988c-2e2c93659db4" alt=""><br><code>[CAPenX]</code></p> | <p><img src="https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/130542707" alt=""><br><code>[eWPTXv3]</code></p> | <p><img src="https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/118275327" alt=""><br><code>[eWPTv2]</code></p> | <p><img src="https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/111771873" alt=""><br><code>[eJPTv2]</code></p> |
 | :----------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------: |
