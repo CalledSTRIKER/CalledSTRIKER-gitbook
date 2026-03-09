@@ -7,7 +7,7 @@ icon: swords
 <div align="center"><img src="https://readme-typing-svg.herokuapp.com/?font=Fira+Code&#x26;weight=600&#x26;size=24&#x26;pause=1000&#x26;color=AA0A0A&#x26;center=true&#x26;vCenter=true&#x26;width=500&#x26;lines=PENETRATION+TESTER;OFFENSIVE+SECURITY+RESEARCHER;WEB+SECURITY+EXPERT" alt=""></div>
 
 <figure>
-<img src="https://github.com/CalledSTRIKER/CalledSTRIKER/blob/main/assets/htb-stats.svg" width="563">
+<img src="https://raw.githubusercontent.com/CalledSTRIKER/CalledSTRIKER/refs/heads/main/assets/htb-stats.svg" width="563">
 </figure>
 
 <figure>
