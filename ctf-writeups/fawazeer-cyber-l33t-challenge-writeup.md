@@ -252,4 +252,4 @@ The task ID is 2, by going to `/api/tasks/2` , the payload will be passed to the
 
 <figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
-[![Follow @ThatYonko in X](https://img.shields.io/badge/Follow-@ThatYonko-1DA1F2?logo=X\&logoColor=white)](https://x.com/thatyonko) [![Follow @thatyonko on GitHub](https://img.shields.io/badge/Follow-@ThatYonko-181717?logo=github\&logoColor=white)](https://github.com/thatyonko)
+[![Follow @CalledSTRIKER in X](https://img.shields.io/badge/Follow-@CalledSTRIKER-1DA1F2?logo=X\&logoColor=white)](https://x.com/CalledSTRIKER) [![Follow @CalledSTRIKER on GitHub](https://img.shields.io/badge/Follow-@CalledSTRIKER-181717?logo=github\&logoColor=white)](https://github.com/CalledSTRIKER)
