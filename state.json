@@ -326,6 +326,11 @@
       "name": "Enterprise",
       "difficulty": "Hard",
       "img": "assets/thm/Enterprise.png"
+    },
+    "avenger": {
+      "name": "AVenger",
+      "difficulty": "Medium",
+      "img": "assets/thm/AVenger.png"
     }
   }
 }
