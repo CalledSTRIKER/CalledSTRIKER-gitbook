@@ -331,6 +331,11 @@
       "name": "AVenger",
       "difficulty": "Medium",
       "img": "assets/thm/AVenger.png"
+    },
+    "ledger": {
+      "name": "Ledger",
+      "difficulty": "Hard",
+      "img": "assets/thm/Ledger.png"
     }
   }
 }
