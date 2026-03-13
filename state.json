@@ -336,6 +336,11 @@
       "name": "Ledger",
       "difficulty": "Hard",
       "img": "assets/thm/Ledger.png"
+    },
+    "cve202226923": {
+      "name": "CVE-2022-26923",
+      "difficulty": "Easy",
+      "img": "assets/thm/CVE-2022-26923.png"
     }
   }
 }
