@@ -1,5 +1,10 @@
 {
   "htb_machines": {
+    "853": {
+      "name": "Principal",
+      "difficulty": "Medium",
+      "img": "assets/htb/Principal.png"
+    },
     "847": {
       "name": "CCTV",
       "difficulty": "Easy",
