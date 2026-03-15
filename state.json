@@ -351,6 +351,11 @@
       "name": "AD Certificate Templates",
       "difficulty": "Medium",
       "img": "assets/thm/AD_Certificate_Templates.png"
+    },
+    "operationendgame": {
+      "name": "Operation Endgame",
+      "difficulty": "Hard",
+      "img": "assets/thm/Operation_Endgame.png"
     }
   }
 }
