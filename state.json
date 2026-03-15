@@ -346,6 +346,11 @@
       "name": "CVE-2022-26923",
       "difficulty": "Easy",
       "img": "assets/thm/CVE-2022-26923.png"
+    },
+    "adcertificatetemplates": {
+      "name": "AD Certificate Templates",
+      "difficulty": "Medium",
+      "img": "assets/thm/AD_Certificate_Templates.png"
     }
   }
 }
