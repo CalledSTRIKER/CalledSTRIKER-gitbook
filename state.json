@@ -361,6 +361,11 @@
       "name": "Operation Endgame",
       "difficulty": "Hard",
       "img": "assets/thm/Operation_Endgame.png"
+    },
+    "vulnnetactive": {
+      "name": "VulnNet: Active",
+      "difficulty": "Medium",
+      "img": "assets/thm/VulnNet__Active.png"
     }
   }
 }
