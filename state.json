@@ -1,5 +1,10 @@
 {
   "htb_machines": {
+    "850": {
+      "name": "VariaType",
+      "difficulty": "Medium",
+      "img": "assets/htb/VariaType.png"
+    },
     "853": {
       "name": "Principal",
       "difficulty": "Medium",
