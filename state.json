@@ -366,6 +366,11 @@
       "name": "VulnNet: Active",
       "difficulty": "Medium",
       "img": "assets/thm/VulnNet__Active.png"
+    },
+    "ohsint": {
+      "name": "OhSINT",
+      "difficulty": "Easy",
+      "img": "assets/thm/OhSINT.png"
     }
   }
 }
