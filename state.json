@@ -1,5 +1,10 @@
 {
   "htb_machines": {
+    "754": {
+      "name": "DarkZero",
+      "difficulty": "Hard",
+      "img": "assets/htb/DarkZero.png"
+    },
     "826": {
       "name": "Overwatch",
       "difficulty": "Medium",
