@@ -1,5 +1,10 @@
 {
   "htb_machines": {
+    "642": {
+      "name": "EscapeTwo",
+      "difficulty": "Easy",
+      "img": "assets/htb/EscapeTwo.png"
+    },
     "627": {
       "name": "Cicada",
       "difficulty": "Easy",
