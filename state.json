@@ -1,5 +1,10 @@
 {
   "htb_machines": {
+    "627": {
+      "name": "Cicada",
+      "difficulty": "Easy",
+      "img": "assets/htb/Cicada.png"
+    },
     "754": {
       "name": "DarkZero",
       "difficulty": "Hard",
