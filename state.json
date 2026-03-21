@@ -1,5 +1,10 @@
 {
   "htb_machines": {
+    "401": {
+      "name": "Return",
+      "difficulty": "Easy",
+      "img": "assets/htb/Return.png"
+    },
     "452": {
       "name": "Timelapse",
       "difficulty": "Easy",
