@@ -1,5 +1,15 @@
 {
   "htb_machines": {
+    "229": {
+      "name": "Sauna",
+      "difficulty": "Easy",
+      "img": "assets/htb/Sauna.png"
+    },
+    "634": {
+      "name": "Administrator",
+      "difficulty": "Medium",
+      "img": "assets/htb/Administrator.png"
+    },
     "401": {
       "name": "Return",
       "difficulty": "Easy",
