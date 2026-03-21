@@ -1,5 +1,10 @@
 {
   "htb_machines": {
+    "484": {
+      "name": "Support",
+      "difficulty": "Easy",
+      "img": "assets/htb/Support.png"
+    },
     "642": {
       "name": "EscapeTwo",
       "difficulty": "Easy",
