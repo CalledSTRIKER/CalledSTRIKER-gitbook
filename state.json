@@ -1,5 +1,10 @@
 {
   "htb_machines": {
+    "856": {
+      "name": "Kobold",
+      "difficulty": "Easy",
+      "img": "assets/htb/Kobold.png"
+    },
     "553": {
       "name": "Authority",
       "difficulty": "Medium",
