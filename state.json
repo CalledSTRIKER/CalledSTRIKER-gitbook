@@ -1,5 +1,10 @@
 {
   "htb_machines": {
+    "476": {
+      "name": "Scrambled",
+      "difficulty": "Medium",
+      "img": "assets/htb/Scrambled.png"
+    },
     "531": {
       "name": "Escape",
       "difficulty": "Medium",
