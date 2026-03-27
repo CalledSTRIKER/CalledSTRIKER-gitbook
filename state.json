@@ -1,5 +1,10 @@
 {
   "htb_machines": {
+    "474": {
+      "name": "StreamIO",
+      "difficulty": "Medium",
+      "img": "assets/htb/StreamIO.png"
+    },
     "476": {
       "name": "Scrambled",
       "difficulty": "Medium",
