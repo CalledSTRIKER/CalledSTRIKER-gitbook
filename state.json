@@ -1,5 +1,10 @@
 {
   "htb_machines": {
+    "802": {
+      "name": "NanoCorp",
+      "difficulty": "Hard",
+      "img": "assets/htb/NanoCorp.png"
+    },
     "474": {
       "name": "StreamIO",
       "difficulty": "Medium",
