@@ -1,5 +1,10 @@
 {
   "htb_machines": {
+    "859": {
+      "name": "DevArea",
+      "difficulty": "Medium",
+      "img": "assets/htb/DevArea.png"
+    },
     "802": {
       "name": "NanoCorp",
       "difficulty": "Hard",
