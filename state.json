@@ -1,5 +1,10 @@
 {
   "htb_machines": {
+    "808": {
+      "name": "Fries",
+      "difficulty": "Hard",
+      "img": "assets/htb/Fries.png"
+    },
     "859": {
       "name": "DevArea",
       "difficulty": "Medium",
