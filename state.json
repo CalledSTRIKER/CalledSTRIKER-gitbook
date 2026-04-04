@@ -1,5 +1,10 @@
 {
   "htb_machines": {
+    "504": {
+      "name": "MetaTwo",
+      "difficulty": "Easy",
+      "img": "assets/htb/MetaTwo.png"
+    },
     "808": {
       "name": "Fries",
       "difficulty": "Hard",
