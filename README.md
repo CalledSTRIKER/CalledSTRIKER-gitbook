@@ -28,6 +28,7 @@ icon: swords
 ## 🗡️ Owned Machines
 
 **HackTheBox**
+
 <img src='assets/htb_bar.svg' width='100%'>
 
 **TryHackMe**
