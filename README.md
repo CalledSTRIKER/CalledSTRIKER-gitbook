@@ -28,8 +28,7 @@ icon: swords
 ## 🗡️ Owned Machines
 
 **HackTheBox**
-
-<img src='assets/htb_bar.svg' width='100%'>
+<img src="https://raw.githubusercontent.com/CalledSTRIKER/CalledSTRIKER/refs/heads/main/assets/htb-stats.svg" width="563">
 
 **TryHackMe**
 
