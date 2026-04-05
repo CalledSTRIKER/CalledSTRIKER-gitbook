@@ -3,8 +3,6 @@
 import os, json, logging, re
 from pathlib import Path
 import requests
-import cairosvg
-from PIL import Image, ImageDraw
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 
@@ -15,19 +13,17 @@ cfg = json.loads(CFG_PATH.read_text()) if CFG_PATH.exists() else {}
 def get(k, default=""):
     return os.environ.get(k) or cfg.get(k) or default
 
-HTB_TOKEN = get("HTB_TOKEN")
+HTB_TOKEN      = get("HTB_TOKEN")
 HTB_PROFILE_ID = get("HTB_PROFILE_ID")
-THM_USER_ID = get("THM_USER_ID")
-ABOUT_ME_FILE = Path("README.md")
+THM_USER_ID    = get("THM_USER_ID")
+ABOUT_ME_FILE  = Path("README.md")
 
 ASSETS_DIR = Path("assets")
-HTB_ASSETS = ASSETS_DIR / "htb"
-THM_ASSETS = ASSETS_DIR / "thm"
 ASSETS_DIR.mkdir(parents=True, exist_ok=True)
-HTB_ASSETS.mkdir(parents=True, exist_ok=True)
-THM_ASSETS.mkdir(parents=True, exist_ok=True)
 
 STATE_FILE = Path("state.json")
+
+DIFFICULTY = ["easy", "medium", "hard", "insane"]
 
 # ---------- STATE ----------
 def load_state():
@@ -41,68 +37,36 @@ def save_state(s):
     STATE_FILE.write_text(json.dumps(s, indent=2))
 
 # ---------- HTTP ----------
-BASE_HEADERS = {"User-Agent": "curl"}
-
 def safe_get(url, headers=None, params=None):
-    hdr = BASE_HEADERS.copy()
+    hdr = {"User-Agent": "curl"}
     if headers:
         hdr.update(headers)
     r = requests.get(url, headers=hdr, params=params, timeout=20)
     r.raise_for_status()
     return r
 
-def download(url, dest: Path):
-    if not url or dest.exists():
-        return
-
-    r = safe_get(url)
-    content_type = r.headers.get("Content-Type", "").lower()
-
-    # Detect SVG
-    is_svg = (
-        url.lower().endswith(".svg")
-        or "image/svg" in content_type
-        or b"<svg" in r.content[:200]
-    )
-
-    if is_svg:
-        png_bytes = cairosvg.svg2png(bytestring=r.content)
-        dest.write_bytes(png_bytes)
-    else:
-        dest.write_bytes(r.content)
-
 def slug(s):
     return re.sub(r"[^a-zA-Z0-9_-]", "_", s)
 
-# ---------- COLORS ----------
-DIFFICULTY_COLOR = {
-    "easy":    (76, 175, 80),
-    "medium":  (255, 193, 7),
-    "hard":    (244, 67, 54),
-    "insane":  (156, 39, 176),
-    "unknown": (33, 150, 243)
-}
+# ---------- SVG ----------
+def _pill(x_label, label, color, x_pill, count):
+    return f"""  <text x="{x_label}" y="45" text-anchor="start" font-family="sans-serif" font-size="14" font-weight="500" letter-spacing="0.05em" fill="{color}">{label}</text>
+  <rect x="{x_pill}" y="32" width="32" height="20" rx="10" fill="{color}" fill-opacity="0.15"/>
+  <text x="{x_pill + 16}" y="46" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="600" fill="{color}" fill-opacity="0.75">{count}</text>"""
 
-DIFFICULTY = [ "easy",  "medium", "hard", "insane",  ]
-
-
-def add_border(src: Path, dst: Path, diff: str, border=8, radius=12):
-
-    TARGET_SIZE = 120
-
-    img = Image.open(src).convert("RGBA")
-    img = img.resize((TARGET_SIZE, TARGET_SIZE), Image.LANCZOS)
-    color = DIFFICULTY_COLOR.get(diff.lower(), DIFFICULTY_COLOR["unknown"])
-    w,h = img.size
-    nw, nh = w + 2*border, h + 2*border
-    mask = Image.new("L", (nw, nh), 0)
-    d = ImageDraw.Draw(mask)
-    d.rounded_rectangle([(0,0),(nw-1,nh-1)], radius=radius, fill=255)
-    colored = Image.new("RGBA", (nw, nh), color + (255,))
-    layer = Image.new("RGBA", (nw, nh), (0,0,0,0))
-    layer.paste(colored, (0,0), mask)
-    layer.paste(img, (border, border), img)
-    layer.save(dst)
+def generate_svg(counts: dict, output: Path):
+    svg = f"""<svg width="100%" viewBox="0 0 680 80" xmlns="http://www.w3.org/2000/svg">
+  <line x1="0" y1="40" x2="680" y2="40" stroke="#808080" stroke-opacity="0.5" stroke-width="0.75"/>
+  <line x1="170" y1="20" x2="170" y2="60" stroke="#808080" stroke-opacity="0.5" stroke-width="0.75"/>
+  <line x1="340" y1="20" x2="340" y2="60" stroke="#808080" stroke-opacity="0.5" stroke-width="0.75"/>
+  <line x1="510" y1="20" x2="510" y2="60" stroke="#808080" stroke-opacity="0.5" stroke-width="0.75"/>
+{_pill(28,  "Insane", "#a855f7", 96,  counts.get("insane", 0))}
+{_pill(198, "Hard",   "#ef4444", 234, counts.get("hard",   0))}
+{_pill(356, "Medium", "#eab308", 414, counts.get("medium", 0))}
+{_pill(530, "Easy",   "#22c55e", 566, counts.get("easy",   0))}
+</svg>"""
+    output.write_text(svg, encoding="utf-8")
+    logging.info("SVG written → %s", output)
 
 # ---------- THM ----------
 THM_API = "https://tryhackme.com/api/v2/public-profile/completed-rooms"
@@ -112,9 +76,8 @@ def fetch_thm_rooms():
     return r.json()["data"]["docs"]
 
 # ---------- HTB ----------
-HTB_ACTIVITY = "https://labs.hackthebox.com/api/v4/profile/activity/{}"
+HTB_ACTIVITY       = "https://labs.hackthebox.com/api/v4/profile/activity/{}"
 HTB_MACHINE_PROFILE = "https://labs.hackthebox.com/api/v4/machine/profile/{}"
-HTB_V5_MACHINES = "https://labs.hackthebox.com/api/v5/machines"
 
 def auth_headers():
     return {"Authorization": f"Bearer {HTB_TOKEN}"} if HTB_TOKEN else {}
@@ -125,43 +88,25 @@ def fetch_htb_activity():
 def fetch_htb_machine(mid):
     return safe_get(HTB_MACHINE_PROFILE.format(mid), headers=auth_headers()).json()["info"]
 
-def get_htb_avatar_domain():
-    try:
-        data = safe_get(HTB_V5_MACHINES, headers=auth_headers()).json()["data"]
-        for m in data:
-            url = m.get("avatar", "")
-            if url.startswith("http"):
-                return url.split("/avatars/")[0]
-    except Exception as e:
-        logging.warning("Avatar domain extraction failed: %s", e)
-    return ""
-
-# ---------- DERIVE OWNED ----------
 def derive_htb(activity):
     machines = {}
     for a in activity:
         if a["object_type"] == "machine":
             machines.setdefault(a["id"], set()).add(a["type"])
-    owned_machines = [mid for mid, flags in machines.items() if {"user", "root"} <= flags]
-    return owned_machines
+    return [mid for mid, flags in machines.items() if {"user", "root"} <= flags]
+
+# ---------- COUNT ----------
+def count_by_difficulty(items):
+    counts = {d: 0 for d in DIFFICULTY}
+    for v in items:
+        d = v["difficulty"].lower()
+        if d in counts:
+            counts[d] += 1
+    return counts
 
 # ---------- MARKDOWN ----------
-def img(src, name, difficulty):
-    return f"<div align='center' style='min-width:400px'><img src='{src}' width='110'/><br><p align='center'><b>{name}</b></p></div>"
-
-def grid(items):
-    if not items:
-        return "_No items_\n"
-    rows = []
-    for i in range(0, len(items), 4):
-        chunk = items[i:i+4]
-        rows.append("| " + " | ".join(chunk) + " |")
-        if i == 0:
-            rows.append("| " + " | ".join(["---"] * len(chunk)) + " |")
-    return "\n".join(rows) + "\n"
-
 START = "<!-- OWNED_SECTION_START -->"
-END = "<!-- OWNED_SECTION_END -->"
+END   = "<!-- OWNED_SECTION_END -->"
 
 def insert_block(path, content):
     block = f"{START}\n{content}\n{END}"
@@ -181,22 +126,13 @@ def main():
         code = r["code"]
         if code in state["thm_rooms"]:
             continue
-        name = r["title"]
         diff = r["difficulty"]
-        img_url = r["imageURL"]
         if diff.lower() not in DIFFICULTY:
             continue
-
-        raw_path = THM_ASSETS / f"{slug(name)}.png"
-        final_path = THM_ASSETS / f"{slug(name)}.png"
-        download(img_url, raw_path)
-        add_border(raw_path, final_path, diff)
-
-        state["thm_rooms"][code] = {"name": name, "difficulty": diff.title(), "img": final_path.as_posix()}
+        state["thm_rooms"][code] = {"name": r["title"], "difficulty": diff.title()}
 
     # --- HTB ---
-    AVATAR_DOMAIN = get_htb_avatar_domain()
-    activity = fetch_htb_activity()
+    activity   = fetch_htb_activity()
     machine_ids = derive_htb(activity)
 
     for mid in machine_ids:
@@ -205,40 +141,33 @@ def main():
         info = fetch_htb_machine(mid)
         name = info.get("name", f"machine_{mid}")
         diff = info.get("difficultyText", "unknown")
-
-        avatar = info.get("avatar") or ""
-        if avatar.startswith("/avatars/") and AVATAR_DOMAIN:
-            avatar = f"{AVATAR_DOMAIN}{avatar}"
-
-        raw_path = HTB_ASSETS / f"{slug(name)}.png"
-        final_path = HTB_ASSETS / f"{slug(name)}.png"
-        download(avatar, raw_path)
-        add_border(raw_path, final_path, diff)
-
+        if diff.lower() not in DIFFICULTY:
+            continue
         state["htb_machines"] = {
-    str(mid): {"name": name, "difficulty": diff.title(), "img": final_path.as_posix()},
-    **state["htb_machines"]
-}
-        
+            str(mid): {"name": name, "difficulty": diff.title()},
+            **state["htb_machines"]
+        }
+
     save_state(state)
 
-    # ---------- BUILD MD ----------
-    md = []
-    md.append("## 🗡️ Owned Machines")
-    md.append('''
-![](https://img.shields.io/badge/■_Easy-4CAF50?style=flat-square&logoColor=white)
-![](https://img.shields.io/badge/■_Medium-FFC107?style=flat-square&logoColor=white)
-![](https://img.shields.io/badge/■_Hard-F44336?style=flat-square&logoColor=white)
-![](https://img.shields.io/badge/■_Insane-9C27B0?style=flat-square&logoColor=white)
-''')
-    
-    md.append("### HackTheBox\n")
-    md.append(grid([img(v["img"], v["name"], v["difficulty"]) for v in state["htb_machines"].values()]))
-    md.append("### TryHackMe\n")
-    md.append(grid([img(v["img"], v["name"], v["difficulty"]) for v in reversed(list(state["thm_rooms"].values()))]))
+    # --- COUNTS & SVGs ---
+    htb_counts   = count_by_difficulty(state["htb_machines"].values())
+    thm_counts   = count_by_difficulty(state["thm_rooms"].values())
+
+    generate_svg(htb_counts,   ASSETS_DIR / "htb_bar.svg")
+    generate_svg(thm_counts,   ASSETS_DIR / "thm_bar.svg")
+
+    # --- README ---
+    md = [
+        "## 🗡️ Owned Machines",
+        "\n**HackTheBox**\n",
+        "<img src='assets/htb_bar.svg' width='100%'>\n",
+        "**TryHackMe**\n",
+        "<img src='assets/thm_bar.svg' width='100%'>\n",
+    ]
 
     insert_block(ABOUT_ME_FILE, "\n".join(md))
-    logging.info("DONE. THM: %d | HTB: %d", len(state["thm_rooms"]), len(state["htb_machines"]))
+    logging.info("DONE — THM: %d | HTB: %d", len(state["thm_rooms"]), len(state["htb_machines"]))
 
 if __name__ == "__main__":
     main()
