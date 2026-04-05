@@ -1,18 +1,18 @@
-<svg width="100%" viewBox="0 0 680 80" xmlns="http://www.w3.org/2000/svg">
-  <line x1="0" y1="40" x2="680" y2="40" stroke="#808080" stroke-opacity="0.5" stroke-width="0.75"/>
-  <line x1="170" y1="20" x2="170" y2="60" stroke="#808080" stroke-opacity="0.5" stroke-width="0.75"/>
-  <line x1="340" y1="20" x2="340" y2="60" stroke="#808080" stroke-opacity="0.5" stroke-width="0.75"/>
-  <line x1="510" y1="20" x2="510" y2="60" stroke="#808080" stroke-opacity="0.5" stroke-width="0.75"/>
-  <text x="28" y="45" text-anchor="start" font-family="sans-serif" font-size="14" font-weight="500" letter-spacing="0.05em" fill="#a855f7">Insane</text>
-  <rect x="96" y="32" width="32" height="20" rx="10" fill="#a855f7" fill-opacity="0.15"/>
-  <text x="112" y="46" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="600" fill="#a855f7" fill-opacity="0.75">0</text>
-  <text x="198" y="45" text-anchor="start" font-family="sans-serif" font-size="14" font-weight="500" letter-spacing="0.05em" fill="#ef4444">Hard</text>
-  <rect x="234" y="32" width="32" height="20" rx="10" fill="#ef4444" fill-opacity="0.15"/>
-  <text x="250" y="46" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="600" fill="#ef4444" fill-opacity="0.75">4</text>
-  <text x="356" y="45" text-anchor="start" font-family="sans-serif" font-size="14" font-weight="500" letter-spacing="0.05em" fill="#eab308">Medium</text>
-  <rect x="414" y="32" width="32" height="20" rx="10" fill="#eab308" fill-opacity="0.15"/>
-  <text x="430" y="46" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="600" fill="#eab308" fill-opacity="0.75">18</text>
-  <text x="530" y="45" text-anchor="start" font-family="sans-serif" font-size="14" font-weight="500" letter-spacing="0.05em" fill="#22c55e">Easy</text>
-  <rect x="566" y="32" width="32" height="20" rx="10" fill="#22c55e" fill-opacity="0.15"/>
-  <text x="582" y="46" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="600" fill="#22c55e" fill-opacity="0.75">21</text>
+<svg width="100%" viewBox="0 0 680 120" xmlns="http://www.w3.org/2000/svg">
+  <line x1="0" y1="60" x2="680" y2="60" stroke="#808080" stroke-opacity="0.5" stroke-width="1"/>
+  <line x1="170" y1="30" x2="170" y2="90" stroke="#808080" stroke-opacity="0.5" stroke-width="1"/>
+  <line x1="340" y1="30" x2="340" y2="90" stroke="#808080" stroke-opacity="0.5" stroke-width="1"/>
+  <line x1="510" y1="30" x2="510" y2="90" stroke="#808080" stroke-opacity="0.5" stroke-width="1"/>
+  <text x="28" y="67" text-anchor="start" font-family="sans-serif" font-size="22" font-weight="500" letter-spacing="0.05em" fill="#a855f7">Insane</text>
+  <rect x="114" y="46" width="42" height="26" rx="13" fill="#a855f7" fill-opacity="0.15"/>
+  <text x="135" y="64" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="600" fill="#a855f7" fill-opacity="0.75">0</text>
+  <text x="198" y="67" text-anchor="start" font-family="sans-serif" font-size="22" font-weight="500" letter-spacing="0.05em" fill="#ef4444">Hard</text>
+  <rect x="252" y="46" width="42" height="26" rx="13" fill="#ef4444" fill-opacity="0.15"/>
+  <text x="273" y="64" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="600" fill="#ef4444" fill-opacity="0.75">4</text>
+  <text x="356" y="67" text-anchor="start" font-family="sans-serif" font-size="22" font-weight="500" letter-spacing="0.05em" fill="#eab308">Medium</text>
+  <rect x="432" y="46" width="42" height="26" rx="13" fill="#eab308" fill-opacity="0.15"/>
+  <text x="453" y="64" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="600" fill="#eab308" fill-opacity="0.75">18</text>
+  <text x="530" y="67" text-anchor="start" font-family="sans-serif" font-size="22" font-weight="500" letter-spacing="0.05em" fill="#22c55e">Easy</text>
+  <rect x="584" y="46" width="42" height="26" rx="13" fill="#22c55e" fill-opacity="0.15"/>
+  <text x="605" y="64" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="600" fill="#22c55e" fill-opacity="0.75">21</text>
 </svg>
