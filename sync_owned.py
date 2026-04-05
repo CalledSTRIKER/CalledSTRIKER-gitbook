@@ -3,6 +3,9 @@
 import os, json, logging, re
 from pathlib import Path
 import requests
+from datetime import datetime, timezone
+
+now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 
@@ -60,10 +63,10 @@ def generate_svg(counts: dict, output: Path):
   <line x1="170" y1="60" x2="170" y2="180" stroke="#808080" stroke-opacity="0.5" stroke-width="1.5"/>
   <line x1="340" y1="60" x2="340" y2="180" stroke="#808080" stroke-opacity="0.5" stroke-width="1.5"/>
   <line x1="510" y1="60" x2="510" y2="180" stroke="#808080" stroke-opacity="0.5" stroke-width="1.5"/>
-{_pill(8,   "Insane", "#a855f7", 116, counts.get("insane", 0))}
-{_pill(195, "Hard",   "#ef4444", 269, counts.get("hard",   0))}
-{_pill(348, "Medium", "#eab308", 456, counts.get("medium", 0))}
-{_pill(535, "Easy",   "#22c55e", 609, counts.get("easy",   0))}
+{_pill(5,   "Insane", "#a855f7", 113, counts.get("insane", 0))}
+{_pill(192, "Hard",   "#ef4444", 267, counts.get("hard",   0))}
+{_pill(345, "Medium", "#eab308", 453, counts.get("medium", 0))}
+{_pill(532, "Easy",   "#22c55e", 607, counts.get("easy",   0))}
 </svg>"""
     output.write_text(svg, encoding="utf-8")
     logging.info("SVG written → %s", output)
@@ -164,6 +167,7 @@ def main():
         "<img src='assets/htb_bar.svg' width='100%'>\n",
         "**TryHackMe**\n",
         "<img src='assets/thm_bar.svg' width='100%'>\n",
+        f"<sub>Last updated: {now}</sub>\n",
     ]
 
     insert_block(ABOUT_ME_FILE, "\n".join(md))
