@@ -50,20 +50,20 @@ def slug(s):
 
 # ---------- SVG ----------
 def _pill(x_label, label, color, x_pill, count):
-    return f"""  <text x="{x_label}" y="67" text-anchor="start" font-family="sans-serif" font-size="22" font-weight="500" letter-spacing="0.05em" fill="{color}">{label}</text>
-  <rect x="{x_pill}" y="46" width="42" height="26" rx="13" fill="{color}" fill-opacity="0.15"/>
-  <text x="{x_pill + 21}" y="64" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="600" fill="{color}" fill-opacity="0.75">{count}</text>"""
+    return f"""  <text x="{x_label}" y="132" text-anchor="start" font-family="sans-serif" font-size="28" font-weight="500" letter-spacing="0.05em" fill="{color}">{label}</text>
+  <rect x="{x_pill}" y="108" width="52" height="34" rx="17" fill="{color}" fill-opacity="0.15"/>
+  <text x="{x_pill + 26}" y="131" text-anchor="middle" font-family="sans-serif" font-size="26" font-weight="600" fill="{color}" fill-opacity="0.75">{count}</text>"""
 
 def generate_svg(counts: dict, output: Path):
-    svg = f"""<svg width="100%" viewBox="0 0 680 120" xmlns="http://www.w3.org/2000/svg">
-  <line x1="0" y1="60" x2="680" y2="60" stroke="#808080" stroke-opacity="0.5" stroke-width="1"/>
-  <line x1="170" y1="30" x2="170" y2="90" stroke="#808080" stroke-opacity="0.5" stroke-width="1"/>
-  <line x1="340" y1="30" x2="340" y2="90" stroke="#808080" stroke-opacity="0.5" stroke-width="1"/>
-  <line x1="510" y1="30" x2="510" y2="90" stroke="#808080" stroke-opacity="0.5" stroke-width="1"/>
-{_pill(28,  "Insane", "#a855f7", 114, counts.get("insane", 0))}
-{_pill(198, "Hard",   "#ef4444", 252, counts.get("hard",   0))}
-{_pill(356, "Medium", "#eab308", 432, counts.get("medium", 0))}
-{_pill(530, "Easy",   "#22c55e", 584, counts.get("easy",   0))}
+    svg = f"""<svg width="100%" viewBox="0 0 680 240" xmlns="http://www.w3.org/2000/svg">
+  <line x1="0" y1="120" x2="680" y2="120" stroke="#808080" stroke-opacity="0.5" stroke-width="1.5"/>
+  <line x1="170" y1="60" x2="170" y2="180" stroke="#808080" stroke-opacity="0.5" stroke-width="1.5"/>
+  <line x1="340" y1="60" x2="340" y2="180" stroke="#808080" stroke-opacity="0.5" stroke-width="1.5"/>
+  <line x1="510" y1="60" x2="510" y2="180" stroke="#808080" stroke-opacity="0.5" stroke-width="1.5"/>
+{_pill(8,   "Insane", "#a855f7", 116, counts.get("insane", 0))}
+{_pill(195, "Hard",   "#ef4444", 269, counts.get("hard",   0))}
+{_pill(348, "Medium", "#eab308", 456, counts.get("medium", 0))}
+{_pill(535, "Easy",   "#22c55e", 609, counts.get("easy",   0))}
 </svg>"""
     output.write_text(svg, encoding="utf-8")
     logging.info("SVG written → %s", output)
