@@ -1,5 +1,9 @@
 {
   "htb_machines": {
+    "591": {
+      "name": "Builder",
+      "difficulty": "Medium"
+    },
     "504": {
       "name": "MetaTwo",
       "difficulty": "Easy",
