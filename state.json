@@ -1,5 +1,9 @@
 {
   "htb_machines": {
+    "862": {
+      "name": "Garfield",
+      "difficulty": "Hard"
+    },
     "591": {
       "name": "Builder",
       "difficulty": "Medium"
