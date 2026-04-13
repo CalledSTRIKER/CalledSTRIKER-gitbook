@@ -1,5 +1,9 @@
 {
   "htb_machines": {
+    "357": {
+      "name": "Intelligence",
+      "difficulty": "Medium"
+    },
     "867": {
       "name": "Silentium",
       "difficulty": "Easy"
