@@ -1,5 +1,9 @@
 {
   "htb_machines": {
+    "867": {
+      "name": "Silentium",
+      "difficulty": "Easy"
+    },
     "862": {
       "name": "Garfield",
       "difficulty": "Hard"
