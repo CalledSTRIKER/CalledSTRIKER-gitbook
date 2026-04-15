@@ -1,5 +1,9 @@
 {
   "htb_machines": {
+    "568": {
+      "name": "Visual",
+      "difficulty": "Medium"
+    },
     "357": {
       "name": "Intelligence",
       "difficulty": "Medium"
