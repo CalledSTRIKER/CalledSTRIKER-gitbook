@@ -1,5 +1,9 @@
 {
   "htb_machines": {
+    "888": {
+      "name": "Logging",
+      "difficulty": "Medium"
+    },
     "633": {
       "name": "Certified",
       "difficulty": "Medium"
