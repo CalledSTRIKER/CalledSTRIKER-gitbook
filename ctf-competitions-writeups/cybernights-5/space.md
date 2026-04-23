@@ -15,7 +15,7 @@ Time for work
 
 Ok, let's move the POST request to burp, firstly I tried array injection but I got `400 Bad request` :
 
-<figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
 If we test for SQL injection using a simple payload `'or 1=1 -- -` we get `Hacker detected` response, which indicate that the WAF ( Web application firewall ) has blocked our request :
 
@@ -33,7 +33,7 @@ That's why the challenge is named `Space`.
 
 Now we need to find a way to bypass the WAF which is blocking the space character. So, when searching about `space block sql injection` we find an [interesting answer](https://security.stackexchange.com/a/127658) :
 
-<figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
 
 So we need to replace the space with other whitespace character that isn't getting blocked by WAF. After trying various payloads it seems that both `%0d` (carriage return) and `%0a` (newline) doesn't get blocked. However, when we want to login using our new query we get the same error again `Hacker detected` :
 
@@ -41,7 +41,7 @@ So we need to replace the space with other whitespace character that isn't getti
 
 It seems that also `--` is getting blocked. How did I know? Simply, If you test for `--` separately you will get this response :
 
-<figure><img src="../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
 
 You can always delete character by character from your payload to understand what is getting blocked by the WAF.
 

@@ -8,15 +8,20 @@
 
 ## HackTheBox
 
-* [Soon](hackthebox/soon.md)
+* [Web](hackthebox/web/README.md)
+  * [JerryTok](hackthebox/web/soon.md)
+* [Machines](hackthebox/machines/README.md)
+  * [Soon](hackthebox/machines/soon.md)
+* [Binary exploitation](hackthebox/binary-exploitation/README.md)
+  * [Soon](hackthebox/binary-exploitation/soon.md)
 
-## CTF Writeups
+## CTF competitions Writeups
 
-* [CyberNights 5](ctf-writeups/cybernights-5/README.md)
-  * [Space](ctf-writeups/cybernights-5/space.md)
-  * [Wave](ctf-writeups/cybernights-5/wave.md)
-* [BHMEA24 Quals](ctf-writeups/bhmea24-quals/README.md)
-  * [Free Flag](ctf-writeups/bhmea24-quals/free-flag.md)
-  * [Notey](ctf-writeups/bhmea24-quals/notey.md)
-  * [Watermelon](ctf-writeups/bhmea24-quals/watermelon.md)
-* [Fawazeer Cyber - L33T Challenge writeup](ctf-writeups/fawazeer-cyber-l33t-challenge-writeup.md)
+* [CyberNights 5](ctf-competitions-writeups/cybernights-5/README.md)
+  * [Space](ctf-competitions-writeups/cybernights-5/space.md)
+  * [Wave](ctf-competitions-writeups/cybernights-5/wave.md)
+* [BHMEA24 Quals](ctf-competitions-writeups/bhmea24-quals/README.md)
+  * [Free Flag](ctf-competitions-writeups/bhmea24-quals/free-flag.md)
+  * [Notey](ctf-competitions-writeups/bhmea24-quals/notey.md)
+  * [Watermelon](ctf-competitions-writeups/bhmea24-quals/watermelon.md)
+* [Fawazeer Cyber - L33T Challenge writeup](ctf-competitions-writeups/fawazeer-cyber-l33t-challenge-writeup.md)

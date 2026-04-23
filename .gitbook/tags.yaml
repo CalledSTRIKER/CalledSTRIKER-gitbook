@@ -1,0 +1,6 @@
+- tag: medium
+  label: Medium
+  color: $warning
+- tag: web
+  label: Web
+  color: blue
