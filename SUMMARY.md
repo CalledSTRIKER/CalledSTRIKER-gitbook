@@ -9,7 +9,7 @@
 ## HackTheBox
 
 * [Machines](hackthebox/machines/README.md)
-  * [Soon](hackthebox/machines/soon.md)
+  * [Eloquia](hackthebox/machines/soon.md)
 * [Web](hackthebox/web/README.md)
   * [JerryTok](hackthebox/web/soon.md)
 * [Binary exploitation](hackthebox/binary-exploitation/README.md)

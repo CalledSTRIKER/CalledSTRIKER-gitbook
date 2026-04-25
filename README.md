@@ -16,17 +16,15 @@ icon: swords
 <div align="center"><img src="https://img.shields.io/badge/Burp_Suite-FF6633?style=for-the-badge&#x26;logo=Burp-Suite&#x26;logoColor=white" alt=""> <img src="https://img.shields.io/badge/Metasploit-7B0000?style=for-the-badge&#x26;logo=metasploit&#x26;logoColor=white" alt=""> <img src="https://img.shields.io/badge/Kali_Linux-557C94?style=for-the-badge&#x26;logo=kali-linux&#x26;logoColor=white" alt=""> <img src="https://img.shields.io/badge/OWASP-37474F?style=for-the-badge&#x26;logo=owasp&#x26;logoColor=white" alt=""> <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&#x26;logo=python&#x26;logoColor=white" alt=""> <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&#x26;logo=docker&#x26;logoColor=white" alt=""></div>
 
 ***
-<!-- OWNED_SECTION_START -->
+
 ## 🗡️ Owned Machines
 
 **HackTheBox**
 
-<img src='assets/htb_bar.svg' width='100%'>
+![](<.gitbook/assets/htb_bar (1).svg>)
 
 **TryHackMe**
 
-<img src='assets/thm_bar.svg' width='100%'>
+![](<.gitbook/assets/thm_bar (1).svg>)
 
 <sub>Last updated: 2026-04-25 21:37 UTC</sub>
-
-<!-- OWNED_SECTION_END -->

@@ -4,3 +4,9 @@
 - tag: web
   label: Web
   color: blue
+- tag: insane
+  label: Insane
+  color: violet
+- tag: windows
+  label: Windows
+  color: cyan
