@@ -28,3 +28,19 @@ icon: swords
 ![](<.gitbook/assets/thm_bar (1).svg>)
 
 <sub>Last updated: 2026-04-25 21:37 UTC</sub>
+
+
+<!-- OWNED_SECTION_START -->
+## 🗡️ Owned Machines
+
+**HackTheBox**
+
+<img src='assets/htb_bar.svg' width='100%'>
+
+**TryHackMe**
+
+<img src='assets/thm_bar.svg' width='100%'>
+
+<sub>Last updated: 2026-04-26 02:49 UTC</sub>
+
+<!-- OWNED_SECTION_END -->

@@ -1,5 +1,9 @@
 {
   "htb_machines": {
+    "817": {
+      "name": "Eloquia",
+      "difficulty": "Insane"
+    },
     "888": {
       "name": "Logging",
       "difficulty": "Medium"
