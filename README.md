@@ -8,8 +8,6 @@ icon: swords
 
 <div data-full-width="true"><figure><img src="https://raw.githubusercontent.com/CalledSTRIKER/CalledSTRIKER/refs/heads/main/assets/htb-stats.svg" alt=""><figcaption></figcaption></figure></div>
 
-<figure><img src="https://raw.githubusercontent.com/CalledSTRIKER/CalledSTRIKER/refs/heads/main/assets/thm-stats.svg" alt=""><figcaption></figcaption></figure>
-
 | <p><img src="https://github.com/user-attachments/assets/b144a205-e91c-4ee9-988c-2e2c93659db4" alt=""><br><code>[CAPenX]</code></p> | <p><img src="https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/130542707" alt=""><br><code>[eWPTXv3]</code></p> | <p><img src="https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/118275327" alt=""><br><code>[eWPTv2]</code></p> | <p><img src="https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/111771873" alt=""><br><code>[eJPTv2]</code></p> |
 | :--------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------: |
 
