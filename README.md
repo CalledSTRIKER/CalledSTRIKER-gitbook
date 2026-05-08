@@ -23,6 +23,6 @@ icon: swords
 
 **TryHackMe**
 
-![](<.gitbook/assets/thm_bar (1).svg>)
+![](.gitbook/assets/thm_bar.svg)
 
 <sub>Last updated: 2026-05-07 21:59 UTC</sub>
