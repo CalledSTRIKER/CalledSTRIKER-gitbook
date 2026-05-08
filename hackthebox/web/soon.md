@@ -1,6 +1,5 @@
 ---
 hidden: true
-noIndex: true
 layout:
   width: default
   title:
