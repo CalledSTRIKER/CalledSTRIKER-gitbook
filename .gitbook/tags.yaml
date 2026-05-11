@@ -10,3 +10,9 @@
 - tag: windows
   label: Windows
   color: cyan
+- tag: binary-exploitation
+  label: Binary Exploitation
+  color: $danger
+- tag: easy
+  label: Easy
+  color: $success

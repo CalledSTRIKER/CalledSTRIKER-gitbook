@@ -13,7 +13,7 @@
 * [Web](hackthebox/web/README.md)
   * [JerryTok](hackthebox/web/jerrytok.md)
 * [Binary exploitation](hackthebox/binary-exploitation/README.md)
-  * [Soon](hackthebox/binary-exploitation/soon.md)
+  * [Execute](hackthebox/binary-exploitation/execute.md)
 
 ## CTF competitions Writeups
 
