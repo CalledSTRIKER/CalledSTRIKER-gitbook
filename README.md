@@ -19,18 +19,6 @@ icon: swords
 
 **HackTheBox**
 
-<img src=".gitbook/assets/htb_bar (1).svg" alt="" width="100%">
-
-**TryHackMe**
-
-<img src=".gitbook/assets/thm_bar.svg" alt="" width="100%">
-
-<sub>Last updated: 2026-05-10 21:49 UTC</sub>
-
-## 🗡️ Owned Machines
-
-**HackTheBox**
-
 <img src=".gitbook/assets/htb_bar (2).svg" alt="" width="100%">
 
 **TryHackMe**
