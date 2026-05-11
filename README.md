@@ -19,10 +19,10 @@ icon: swords
 
 **HackTheBox**
 
-<img src=".gitbook/assets/htb_bar (2).svg" alt="" width="100%">
+<img src=".gitbook/assets/htb_bar (1).svg" alt="" width="100%">
 
 **TryHackMe**
 
-<img src=".gitbook/assets/thm_bar (1).svg" alt="" width="100%">
+<img src=".gitbook/assets/thm_bar.svg" alt="" width="100%">
 
 <sub>Last updated: 2026-05-11 03:36 UTC</sub>
