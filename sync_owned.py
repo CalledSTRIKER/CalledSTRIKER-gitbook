@@ -114,10 +114,25 @@ END   = "<!-- OWNED_SECTION_END -->"
 def insert_block(path, content):
     block = f"{START}\n{content}\n{END}"
     txt = path.read_text(encoding="utf-8") if path.exists() else ""
-    if START in txt:
-        txt = re.sub(f"{START}.*?{END}", block, txt, flags=re.S)
-    else:
-        txt += "\n\n" + block
+
+    # Remove ANY previous managed block first
+    txt = re.sub(
+        r"<!-- OWNED_SECTION_START -->.*?<!-- OWNED_SECTION_END -->",
+        "",
+        txt,
+        flags=re.S,
+    )
+
+    # Remove accidental duplicate headings generated previously
+    txt = re.sub(
+        r"## 🗡️ Owned Machines\s+(\*\*HackTheBox\*\*.*?<sub>Last updated:.*?</sub>)",
+        "",
+        txt,
+        flags=re.S,
+    )
+
+    txt = txt.rstrip() + "\n\n" + block + "\n"
+
     path.write_text(txt, encoding="utf-8")
 
 # ---------- MAIN ----------
