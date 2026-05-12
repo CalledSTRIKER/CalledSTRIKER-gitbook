@@ -4,6 +4,7 @@ import os, json, logging, re
 from pathlib import Path
 import requests
 from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 
 now = datetime.now(ZoneInfo("Asia/Riyadh")).strftime("%Y-%m-%d %H:%M KSA")
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
