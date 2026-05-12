@@ -15,19 +15,6 @@ icon: swords
 
 ***
 
-## 🗡️ Owned Machines
-
-**HackTheBox**
-
-<img src=".gitbook/assets/htb_bar (1).svg" alt="" width="100%">
-
-**TryHackMe**
-
-<img src=".gitbook/assets/thm_bar.svg" alt="" width="100%">
-
-<sub>Last updated: 2026-05-11 03:36 UTC</sub>
-
-
 <!-- OWNED_SECTION_START -->
 ## 🗡️ Owned Machines
 
@@ -39,6 +26,6 @@ icon: swords
 
 <img src='assets/thm_bar.svg' width='100%'>
 
-<sub>Last updated: 2026-05-12 08:41 UTC</sub>
+<sub>Last updated: 2026-05-12 08:52 UTC</sub>
 
 <!-- OWNED_SECTION_END -->
