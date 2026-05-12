@@ -5,8 +5,7 @@ from pathlib import Path
 import requests
 from datetime import datetime, timezone
 
-now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
-
+now = datetime.now(ZoneInfo("Asia/Riyadh")).strftime("%Y-%m-%d %H:%M KSA")
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 
 # ---------- CONFIG ----------
