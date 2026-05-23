@@ -1,5 +1,9 @@
 {
   "htb_machines": {
+    "900": {
+      "name": "Reactor",
+      "difficulty": "Easy"
+    },
     "894": {
       "name": "Helix",
       "difficulty": "Medium"
