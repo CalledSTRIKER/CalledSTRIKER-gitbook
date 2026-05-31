@@ -4,7 +4,7 @@
 
 ## Security Research
 
-* [BadSuccessor](security-research/badsuccessor.md)
+* [WebMap](security-research/webmap.md)
 
 ## HackTheBox
 
@@ -25,3 +25,7 @@
   * [Notey](ctf-competitions-writeups/bhmea24-quals/notey.md)
   * [Watermelon](ctf-competitions-writeups/bhmea24-quals/watermelon.md)
 * [Fawazeer Cyber - L33T Challenge writeup](ctf-competitions-writeups/fawazeer-cyber-l33t-challenge-writeup.md)
+
+## Hacking Notes
+
+* [BadSuccessor](hacking-notes/badsuccessor.md)

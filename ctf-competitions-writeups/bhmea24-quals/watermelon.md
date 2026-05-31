@@ -178,7 +178,7 @@ Examples:
 
 {% stepper %}
 {% step %}
-#### Read process environment
+**Read process environment**
 
 Set the filename to /proc/1/environ and download it.
 
@@ -190,7 +190,7 @@ You can retrieve the flag from the environment contents.
 {% endstep %}
 
 {% step %}
-#### Download the SQLite DB
+**Download the SQLite DB**
 
 Set the filename to /app/instance/db.db, then download the DB and open it with any DB viewer to get the admin password. Use that to access /admin.
 
@@ -200,7 +200,7 @@ Set the filename to /app/instance/db.db, then download the DB and open it with a
 {% endstep %}
 
 {% step %}
-#### Read source file and secret key
+**Read source file and secret key**
 
 Set the filename to /app/app.py and read the `SECRET_KEY`. With that you can create your own admin cookie using tools like `flask-unsign` and access /admin.
 {% endstep %}
