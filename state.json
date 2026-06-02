@@ -1,5 +1,9 @@
 {
   "htb_machines": {
+    "903": {
+      "name": "DevHub",
+      "difficulty": "Medium"
+    },
     "900": {
       "name": "Reactor",
       "difficulty": "Easy"
