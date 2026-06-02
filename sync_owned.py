@@ -5,6 +5,7 @@ from pathlib import Path
 import requests
 from datetime import datetime, timezone
 from zoneinfo import ZoneInfo
+from time import sleep
 
 now = datetime.now(ZoneInfo("Asia/Riyadh")).strftime("%Y-%m-%d %H:%M KSA")
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
@@ -140,14 +141,14 @@ def main():
     state = load_state()
 
     # --- THM ---
-    for r in fetch_thm_rooms():
-        code = r["code"]
-        if code in state["thm_rooms"]:
-            continue
-        diff = r["difficulty"]
-        if diff.lower() not in DIFFICULTY:
-            continue
-        state["thm_rooms"][code] = {"name": r["title"], "difficulty": diff.title()}
+    #for r in fetch_thm_rooms():
+        #code = r["code"]
+        #if code in state["thm_rooms"]:
+            #continue
+        #diff = r["difficulty"]
+        #if diff.lower() not in DIFFICULTY:
+            #continue
+        #state["thm_rooms"][code] = {"name": r["title"], "difficulty": diff.title()}
 
     # --- HTB ---
     activity   = fetch_htb_activity()
@@ -170,23 +171,21 @@ def main():
 
     # --- COUNTS & SVGs ---
     htb_counts   = count_by_difficulty(state["htb_machines"].values())
-    thm_counts   = count_by_difficulty(state["thm_rooms"].values())
+    #thm_counts   = count_by_difficulty(state["thm_rooms"].values())
 
     generate_svg(htb_counts,   ASSETS_DIR / "htb_bar.svg")
-    generate_svg(thm_counts,   ASSETS_DIR / "thm_bar.svg")
+    #generate_svg(thm_counts,   ASSETS_DIR / "thm_bar.svg")
 
     # --- README ---
     md = [
         "## 🗡️ Owned Machines",
         "\n**HackTheBox**\n",
         "<img src='assets/htb_bar.svg' width='100%'>\n",
-        "**TryHackMe**\n",
-        "<img src='assets/thm_bar.svg' width='100%'>\n",
         f"<sub>Last updated: {now}</sub>\n",
     ]
 
     insert_block(ABOUT_ME_FILE, "\n".join(md))
-    logging.info("DONE — THM: %d | HTB: %d", len(state["thm_rooms"]), len(state["htb_machines"]))
+    logging.info("HTB: %d", len(state["htb_machines"]))
 
 if __name__ == "__main__":
     main()
