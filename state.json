@@ -1,5 +1,9 @@
 {
   "htb_machines": {
+    "223": {
+      "name": "Monteverde",
+      "difficulty": "Medium"
+    },
     "903": {
       "name": "DevHub",
       "difficulty": "Medium"
