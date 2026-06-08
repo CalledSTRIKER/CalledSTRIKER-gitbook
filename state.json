@@ -1,5 +1,9 @@
 {
   "htb_machines": {
+    "299": {
+      "name": "Cereal",
+      "difficulty": "Hard"
+    },
     "223": {
       "name": "Monteverde",
       "difficulty": "Medium"
