@@ -1,5 +1,9 @@
 {
   "htb_machines": {
+    "906": {
+      "name": "Connected",
+      "difficulty": "Easy"
+    },
     "299": {
       "name": "Cereal",
       "difficulty": "Hard"
