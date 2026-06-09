@@ -1,5 +1,9 @@
 {
   "htb_machines": {
+    "510": {
+      "name": "Flight",
+      "difficulty": "Hard"
+    },
     "906": {
       "name": "Connected",
       "difficulty": "Easy"
