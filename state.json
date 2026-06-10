@@ -1,5 +1,9 @@
 {
   "htb_machines": {
+    "575": {
+      "name": "Napper",
+      "difficulty": "Hard"
+    },
     "510": {
       "name": "Flight",
       "difficulty": "Hard"
