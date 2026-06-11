@@ -1,5 +1,9 @@
 {
   "htb_machines": {
+    "560": {
+      "name": "Rebound",
+      "difficulty": "Insane"
+    },
     "575": {
       "name": "Napper",
       "difficulty": "Hard"
