@@ -80,14 +80,23 @@ def fetch_thm_rooms():
     return r.json()["data"]["docs"]
 
 # ---------- HTB ----------
-HTB_ACTIVITY       = "https://labs.hackthebox.com/api/v4/profile/activity/{}"
+HTB_ACTIVITY        = "https://labs.hackthebox.com/api/v5/user/profile/activity/{}"
 HTB_MACHINE_PROFILE = "https://labs.hackthebox.com/api/v4/machine/profile/{}"
 
 def auth_headers():
     return {"Authorization": f"Bearer {HTB_TOKEN}"} if HTB_TOKEN else {}
 
 def fetch_htb_activity():
-    return safe_get(HTB_ACTIVITY.format(HTB_PROFILE_ID), headers=auth_headers()).json()["profile"]["activity"]
+    all_activity = []
+    page = 1
+    while True:
+        data = safe_get(HTB_ACTIVITY.format(HTB_PROFILE_ID), headers=auth_headers(), params={"page": page}).json()
+        all_activity.extend(data["data"])
+        if page >= data["meta"]["lastPage"]:
+            break
+        page += 1
+        sleep(0.5)
+    return all_activity
 
 def fetch_htb_machine(mid):
     return safe_get(HTB_MACHINE_PROFILE.format(mid), headers=auth_headers()).json()["info"]
@@ -95,7 +104,7 @@ def fetch_htb_machine(mid):
 def derive_htb(activity):
     machines = {}
     for a in activity:
-        if a["object_type"] == "machine":
+        if a["type"] in ("user", "root"):
             machines.setdefault(a["id"], set()).add(a["type"])
     return [mid for mid, flags in machines.items() if {"user", "root"} <= flags]
 
@@ -116,7 +125,6 @@ def insert_block(path, content):
     block = f"{START}\n{content}\n{END}"
     txt = path.read_text(encoding="utf-8") if path.exists() else ""
 
-    # Remove ANY previous managed block first
     txt = re.sub(
         r"<!-- OWNED_SECTION_START -->.*?<!-- OWNED_SECTION_END -->",
         "",
@@ -124,7 +132,6 @@ def insert_block(path, content):
         flags=re.S,
     )
 
-    # Remove accidental duplicate headings generated previously
     txt = re.sub(
         r"## 🗡️ Owned Machines\s+(\*\*HackTheBox\*\*.*?<sub>Last updated:.*?</sub>)",
         "",
@@ -140,18 +147,8 @@ def insert_block(path, content):
 def main():
     state = load_state()
 
-    # --- THM ---
-    #for r in fetch_thm_rooms():
-        #code = r["code"]
-        #if code in state["thm_rooms"]:
-            #continue
-        #diff = r["difficulty"]
-        #if diff.lower() not in DIFFICULTY:
-            #continue
-        #state["thm_rooms"][code] = {"name": r["title"], "difficulty": diff.title()}
-
     # --- HTB ---
-    activity   = fetch_htb_activity()
+    activity    = fetch_htb_activity()
     machine_ids = derive_htb(activity)
 
     for mid in machine_ids:
@@ -170,11 +167,9 @@ def main():
     save_state(state)
 
     # --- COUNTS & SVGs ---
-    htb_counts   = count_by_difficulty(state["htb_machines"].values())
-    #thm_counts   = count_by_difficulty(state["thm_rooms"].values())
+    htb_counts = count_by_difficulty(state["htb_machines"].values())
 
-    generate_svg(htb_counts,   ASSETS_DIR / "htb_bar.svg")
-    #generate_svg(thm_counts,   ASSETS_DIR / "thm_bar.svg")
+    generate_svg(htb_counts, ASSETS_DIR / "htb_bar.svg")
 
     # --- README ---
     md = [
