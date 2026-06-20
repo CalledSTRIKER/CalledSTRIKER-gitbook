@@ -1,5 +1,9 @@
 {
   "htb_machines": {
+    "909": {
+      "name": "Checkpoint",
+      "difficulty": "Medium"
+    },
     "560": {
       "name": "Rebound",
       "difficulty": "Insane"
