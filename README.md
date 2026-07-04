@@ -17,10 +17,13 @@ icon: swords
 
 ***
 
+<!-- OWNED_SECTION_START -->
 ## 🗡️ Owned Machines
 
 **HackTheBox**
 
-<img src=".gitbook/assets/htb_bar (5).svg" alt="" width="100%">
+<img src='assets/htb_bar.svg' width='100%'>
 
-<sub>Last updated: 2026-07-04 16:06 KSA</sub>
+<sub>Last updated: 2026-07-04 17:59 KSA</sub>
+
+<!-- OWNED_SECTION_END -->
