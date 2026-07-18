@@ -11,7 +11,7 @@
 * [Machines](hackthebox/machines/README.md)
   * [Eloquia](hackthebox/machines/eloquia.md)
 * [Web](hackthebox/web/README.md)
-  * [JerryTok](hackthebox/web/jerrytok.md)
+  * [JerryTok](hackthebox/web/soon.md)
 * [Binary exploitation](hackthebox/binary-exploitation/README.md)
   * [Execute](hackthebox/binary-exploitation/execute.md)
 
