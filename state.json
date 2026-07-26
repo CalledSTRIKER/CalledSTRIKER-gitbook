@@ -1,5 +1,9 @@
 {
   "htb_machines": {
+    "927": {
+      "name": "Bedside",
+      "difficulty": "Medium"
+    },
     "915": {
       "name": "Enigma",
       "difficulty": "Easy"
