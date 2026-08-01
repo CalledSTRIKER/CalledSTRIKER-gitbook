@@ -1,5 +1,9 @@
 {
   "htb_machines": {
+    "951": {
+      "name": "Ghostlink",
+      "difficulty": "Hard"
+    },
     "927": {
       "name": "Bedside",
       "difficulty": "Medium"
