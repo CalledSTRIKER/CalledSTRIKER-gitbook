@@ -1,5 +1,9 @@
 {
   "htb_machines": {
+    "933": {
+      "name": "Cohort",
+      "difficulty": "Easy"
+    },
     "951": {
       "name": "Ghostlink",
       "difficulty": "Hard"
