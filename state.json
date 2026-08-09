@@ -1,5 +1,9 @@
 {
   "htb_machines": {
+    "537": {
+      "name": "Busqueda",
+      "difficulty": "Easy"
+    },
     "933": {
       "name": "Cohort",
       "difficulty": "Easy"
