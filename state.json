@@ -1,5 +1,9 @@
 {
   "htb_machines": {
+    "493": {
+      "name": "UpDown",
+      "difficulty": "Medium"
+    },
     "148": {
       "name": "Active",
       "difficulty": "Easy"
