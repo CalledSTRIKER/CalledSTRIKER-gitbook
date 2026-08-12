@@ -23,7 +23,7 @@ This issue is two problems stacked on top of each other:
 
 ### How it started
 
-My discovery of this vulnerability was indirect.&#x20;
+My discovery of this vulnerability was indirect.
 
 I previously downloaded `WebMap` to visualize my nmap scans in a Graph, and I forgot about it, then later performed a network scan on my VPN IP to check whether any ports are exposed, and I discovered that port 8000 running **WebMap** is open.
 
@@ -51,7 +51,7 @@ Apparently, they are using some sort of authentication, so we generate a token a
 
 Among the other functionalities in the dashboard is the new nmap scan functionality:
 
-<figure><img src="../.gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (50).png" alt=""><figcaption></figcaption></figure>
 
 Running another binary is an obvious use case for Command injection, we can test many of these parameters but the most flexible one is the `params` parameter.
 
@@ -67,13 +67,13 @@ Developers tend to miss sanitizing whitespace, one of the Command injection tech
 
 We can simply do this in Burp by using `%0a` so our payload will be:
 
-`%0a` `command` `%0a`&#x20;
+`%0a` `command` `%0a`
 
 First newline is to start a new command and the last newline to skip anything that comes after our command so we just pass it to the next line.
 
 However, because the output is not displayed, we need to do an **Out of Band Command Injection**, so I fired up my Python server and ran cURL on my Docker host IP :
 
-<figure><img src="../.gitbook/assets/image (57).png" alt=""><figcaption><p>Test request 2</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (55).png" alt=""><figcaption><p>Test request 2</p></figcaption></figure>
 
 ### **It worked! but it didn't**
 
@@ -81,7 +81,7 @@ We no longer get an 'invalid syntax' error, however, I haven't receive any reque
 
 <figure><img src="../.gitbook/assets/image (61).png" alt=""><figcaption></figcaption></figure>
 
-Maybe they are silently cutting out any newlines?&#x20;
+Maybe they are silently cutting out any newlines?
 
 Maybe they actually have a very good input filtering?
 
@@ -101,7 +101,7 @@ Now let's get our reverse shell:
 
 <figure><img src="../.gitbook/assets/image (63).png" alt=""><figcaption><p>Test request 4</p></figcaption></figure>
 
-Again, `invalid syntax`.&#x20;
+Again, `invalid syntax`.
 
 But because we have `wget` we can download our payload and execute it with no need for any additional characters other than newline.
 
@@ -121,9 +121,9 @@ Again! `invalid syntax` .
 
 Obviously it's because of the slash `/` , so what we can do?
 
-It's actually pretty simple; we just need to rename our `bash.sh` to `index.html` and download the page without a `/`.&#x20;
+It's actually pretty simple; we just need to rename our `bash.sh` to `index.html` and download the page without a `/`.
 
-However, because we fetched `index.html`  before, **the next downloaded file would be index.html.1 or index.html.{number}**, that's the default behavior of `wget` it doesn't overwrite files by default.
+However, because we fetched `index.html` before, **the next downloaded file would be index.html.1 or index.html.{number}**, that's the default behavior of `wget` it doesn't overwrite files by default.
 
 We can just specify the file with `-O bash.sh` or `-O index.html` and run it:
 
@@ -138,7 +138,7 @@ This is considered an **authenticated remote code execution**, it's good, but wa
 So I tried the very simple way to bypass it:
 
 1. Opened a new repeater tab
-2. Removed the session key
+2. Removed the session cookie
 
 And here is the surprise :
 
@@ -240,8 +240,6 @@ They later closed the advisory without warning users, and without crediting my r
 <figure><img src="../.gitbook/assets/600592913-0ac3c763-8c01-4d18-98bf-20dd78dd8e8c.png" alt=""><figcaption><p>The maintainer removed me as a collaborator on the Advisory</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/600580814-98d8dc22-aa1d-45cf-baba-889b5df906e5.png" alt=""><figcaption><p>How he ie behaving</p></figcaption></figure>
-
-
 
 A fix was eventually pushed silently to master branch with no mention of a vulnerability anywhere. No changelog, no advisory, nothing. This repository has no version tags, no releases, everything goes straight to master, so users have no way of knowing anything changed unless they are watching commits.
 
@@ -403,4 +401,3 @@ if __name__ == "__main__":
 
 ```
 {% endcode %}
-
