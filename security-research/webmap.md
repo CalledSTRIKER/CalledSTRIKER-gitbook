@@ -235,13 +235,11 @@ Setting aside how they were disrespectful, they told me the project is just for 
 
 They later closed the advisory without warning users, and without crediting my research or requesting a CVE assignment. I was also removed as a collaborator from the advisory.
 
-
-
 <figure><img src="../.gitbook/assets/image (57).png" alt=""><figcaption><p>The maintainer closed the GitHub Security Advisory without publication</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/600592913-0ac3c763-8c01-4d18-98bf-20dd78dd8e8c.png" alt=""><figcaption><p>The maintainer removed me as a collaborator on the Advisory</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (67).png" alt="" width="375"><figcaption><p>The maintainer removed me as a collaborator on the Advisory</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/600580814-98d8dc22-aa1d-45cf-baba-889b5df906e5.png" alt=""><figcaption><p>How he ie behaving</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/600580814-98d8dc22-aa1d-45cf-baba-889b5df906e5.png" alt=""><figcaption><p>How he is behaving</p></figcaption></figure>
 
 A fix was eventually pushed silently to master branch with no mention of a vulnerability anywhere. No changelog, no advisory, nothing. This repository has no version tags, no releases, everything goes straight to master, so users have no way of knowing anything changed unless they are watching commits.
 
