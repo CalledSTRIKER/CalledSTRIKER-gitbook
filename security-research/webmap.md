@@ -229,13 +229,15 @@ With 100K+ pulls, a lot of people have run WebMap's default command exactly as w
 
 ### What the Maintainer Did
 
-I reported this through a GitHub security advisory. I was so excited for my first CVE that I couldn't wait so I did some OSINT and found the maintainer's LinkedIn profile, and reached out directly to gently ask them to review the advisory urgently.
+I reported this through a GitHub security advisory ( GHSA-rpg3-65vx-ffwm ). I was so excited for my first CVE that I couldn't wait so I did some OSINT and found the maintainer's LinkedIn profile, and reached out directly to gently ask them to review the advisory urgently.
 
 Setting aside how they were disrespectful, they told me the project is just for fun and that **it must only run on localhost or it's the user's problem**, ignoring that their own repository download & usage instructions is what exposes it by default, and ignoring the severity and scale of real users affected, and how popular the project is. Then blocked me.
 
 They later closed the advisory without warning users, and without crediting my research or requesting a CVE assignment. I was also removed as a collaborator from the advisory.
 
-<figure><img src="../.gitbook/assets/600589585-6d552970-9030-43b0-9715-3423c7866079.png" alt=""><figcaption><p>The maintainer closed the GitHub Security Advisory without publication</p></figcaption></figure>
+
+
+<figure><img src="../.gitbook/assets/image (57).png" alt=""><figcaption><p>The maintainer closed the GitHub Security Advisory without publication</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/600592913-0ac3c763-8c01-4d18-98bf-20dd78dd8e8c.png" alt=""><figcaption><p>The maintainer removed me as a collaborator on the Advisory</p></figcaption></figure>
 
