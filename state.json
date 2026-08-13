@@ -1,5 +1,9 @@
 {
   "htb_machines": {
+    "240": {
+      "name": "ServMon",
+      "difficulty": "Easy"
+    },
     "936": {
       "name": "DanglingTree",
       "difficulty": "Medium"
