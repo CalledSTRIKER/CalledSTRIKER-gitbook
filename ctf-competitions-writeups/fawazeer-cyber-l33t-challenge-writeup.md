@@ -75,7 +75,7 @@ Now, because the application is using `db.exec`, this is considered a **Stacked 
 Which basically means you can terminate the current query and start another one by using `;` :
 
 ```sql
-'; INSERT INTO users(username,password,role) VALUES ('yonkoadmin', 'password', 'admin') --
+'; INSERT INTO users(username,password,role) VALUES ('strikeradmin', 'password', 'admin') --
 ```
 
 But you can’t simply do that, because of the `bcrypt.compare` in the Login endpoint :
