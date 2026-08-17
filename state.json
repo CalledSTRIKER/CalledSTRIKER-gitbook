@@ -1,5 +1,9 @@
 {
   "htb_machines": {
+    "578": {
+      "name": "Broker",
+      "difficulty": "Easy"
+    },
     "170": {
       "name": "Help",
       "difficulty": "Easy"
