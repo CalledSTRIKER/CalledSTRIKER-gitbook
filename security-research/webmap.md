@@ -129,7 +129,7 @@ We can just specify the file with `-O bash.sh` or `-O index.html` and run it:
 
 <figure><img src="../.gitbook/assets/image (65).png" alt=""><figcaption><p>Test request 6 - Fully Interactive Remote Code Execution</p></figcaption></figure>
 
-Now, We successfully leveraged the command injection to achieve **Interactive remote code execution as root inside the container**.
+Now, we successfully leveraged the command injection to achieve **Interactive remote code execution as root inside the container**.
 
 ### The Last Piece of the Puzzle
 
