@@ -1,12 +1,12 @@
 # WebMap
 
-<figure><img src="../.gitbook/assets/image (46).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 ### Summary
 
-WebMap is an open-source, Docker-deployed dashboard for running and visualizing Nmap scans, with 100K+ Docker Hub pulls, 1.1K+ GitHub stars, and \~300 forks. Its scan endpoint takes user-supplied parameters and passes them straight into a shell command.
+WebMap is an open source, Docker-deployed dashboard for running and visualizing Nmap scans, with 100K+ Docker Hub pulls, 1.1K+ GitHub stars, and \~300 forks. Its scan endpoint takes user-supplied parameters and passes them straight into a shell command.
 
-A gap in the input validation regex for the `params` parameter and `target` parameter lets an attacker smuggle a newline into that command, breaking out of the intended `nmap` invocation and running arbitrary shell commands as root inside the container, with no authentication required.
+A gap in the input validation regex for the `params` & `target` parameters lets an attacker smuggle a newline into that command, breaking out of the intended `nmap` invocation and running arbitrary shell commands as root inside the container, with no authentication required.
 
 The official Docker deployment instructions bind the service to all network interfaces by default, so anyone who followed the README is likely exposed to the internet.
 
