@@ -231,7 +231,7 @@ With 100K+ pulls, a lot of people have run WebMap's default command exactly as w
 
 ### What the Maintainer Did
 
-I reported this through a GitHub security advisory ( GHSA-rpg3-65vx-ffwm ). I was so excited for my first CVE that I couldn't wait so I did some OSINT and found the maintainer's LinkedIn profile, and reached out directly to gently ask them to review the advisory urgently.
+I reported this through a GitHub security advisory. I was so excited for my first CVE that I couldn't wait so I did some OSINT and found the maintainer's LinkedIn profile, and reached out directly to gently ask them to review the advisory urgently.
 
 Setting aside how they were disrespectful, they told me the project is just for fun and that **it must only run on localhost or it's the user's problem**, ignoring that their own repository download & usage instructions is what exposes it by default, and ignoring the severity and scale of real users affected, and how popular the project is. Then blocked me.
 
