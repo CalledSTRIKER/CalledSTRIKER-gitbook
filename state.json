@@ -1,5 +1,9 @@
 {
   "htb_machines": {
+    "255": {
+      "name": "Blackfield",
+      "difficulty": "Hard"
+    },
     "578": {
       "name": "Broker",
       "difficulty": "Easy"
