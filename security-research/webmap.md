@@ -1,6 +1,6 @@
 # WebMap
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Summary
 
@@ -243,7 +243,11 @@ They later closed the advisory without warning users, and without crediting my r
 
 <figure><img src="../.gitbook/assets/600580814-98d8dc22-aa1d-45cf-baba-889b5df906e5.png" alt=""><figcaption><p>How he is behaving</p></figcaption></figure>
 
-A fix was eventually pushed silently to master branch with no mention of a vulnerability anywhere. No changelog, no advisory, nothing. This repository has no version tags, no releases, everything goes straight to master, so users have no way of knowing anything changed unless they are watching commits.
+What's interesting is that he works in the cyber security field too.
+
+**A fix was eventually pushed silently to master branch** without crediting me and with no mention of a vulnerability anywhere. This was a stupid, cowardly move on his part. No credit, no mention, nothing. Just a man too insecure to admit someone else found what he missed.
+
+This repository has no version tags, no releases, everything goes straight to master, so users have no way of knowing anything changed unless they are watching commits.
 
 Because of how this was handled I submitted a CVE request to VulDB.
 
