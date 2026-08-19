@@ -245,7 +245,7 @@ They later closed the advisory without warning users, and without crediting my r
 
 What's interesting is that he works in the cyber security field too.
 
-**A fix was eventually pushed silently to master branch** without crediting me and with no mention of a vulnerability anywhere. This was a stupid, cowardly move on his part. No credit, no mention, nothing. Just a man too insecure to admit someone else found what he missed.
+**A fix was eventually pushed silently to master branch** without crediting me and with no mention of a vulnerability anywhere. This was a stupid, cowardly move on his part. Not a word about it, nothing. Just a man too insecure to admit someone else found what he missed.
 
 This repository has no version tags, no releases, everything goes straight to master, so users have no way of knowing anything changed unless they are watching commits.
 
