@@ -171,7 +171,7 @@ and re.search(r'^[a-zA-Z0-9\-\.\:\/\s]+$', request.POST['target'])):
 
 The bug is in that `\s`. Python's re module treats `\s` as matching whitespace, tab, `\n`, `\r`, `\f`, and `\v` not just space and tab. A literal newline (`%0a` URL-encoded) satisfies the validation and sails through.
 
-**The `target` parameter is vulnerable too. it also allows the `/` character, so we can skip the `index.html` part and write our file directly which what we will do in the POC.**
+**The `target` parameter is vulnerable too. it also allows the `/` character, so we can skip the `index.html` part and download the file directly which what we will do in the POC.**
 
 The validated value is then interpolated directly into a shell string and executed:
 
