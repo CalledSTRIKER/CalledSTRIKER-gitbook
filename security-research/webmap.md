@@ -346,9 +346,9 @@ def build_arg_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="webmap_exploit.py",
         description=(
-            "PoC for an unauthenticated command injection / RCE in WebMap's "
+            "PoC for an unauthenticated command injection leading to RCE in WebMap's "
             "/api/v1/nmap/scan/new endpoint. Hosts a payload over HTTP, then "
-            "tricks the target's nmap scan into downloading and executing it."
+            "inject a command that download it and execute it."
         ),
         epilog=(
             "Example:\n"
