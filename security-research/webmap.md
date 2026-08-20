@@ -257,9 +257,36 @@ Because of how this was handled I submitted a CVE request to VulDB.
 
 ### Am I Affected?
 
-If you pulled the image or cloned the repo before this [commit](https://github.com/SabyasachiRana/WebMap/commit/3d52f65803a2716bff14d938352c6fef45b0cfb6) , you're on a vulnerable version. If your instance was reachable from any network you don't fully control, treat it as potentially compromised.
+**If you pulled the image or cloned the repo before this** [**commit**](https://github.com/SabyasachiRana/WebMap/commit/3d52f65803a2716bff14d938352c6fef45b0cfb6) **, you're on a vulnerable version.** If your instance was reachable from any network you don't fully control, treat it as potentially compromised.
 
-If you are at or after that commit, this specific vulnerability was addressed.
+**If you are at or after that commit, this specific vulnerability was addressed.**
+
+However you need to change your port binding from:
+
+```
+-p 8000:8000
+```
+
+to:
+
+```
+-p 127.0.0.1:8000:8000
+```
+
+Full corrected command:
+
+```bash
+docker run -d \
+    --name webmap \
+    -h webmap \
+    -p 127.0.0.1:8000:8000 \
+    -v ./_container/xml:/opt/xml \
+    -v ./_container/notes:/opt/notes \
+    -v ./_container/schedule:/opt/schedule \
+    ghcr.io/sabyasachirana/webmap
+```
+
+Now you are only exposing it to your localhost.
 
 ### Proof of concept
 
