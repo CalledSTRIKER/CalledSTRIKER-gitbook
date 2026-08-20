@@ -173,7 +173,7 @@ The bug is in that `\s`. Python's re module treats `\s` as matching whitespace, 
 
 **The `target` parameter is vulnerable too. it also allows the `/` character, so we can skip the `index.html` part and download the file directly which what we will do in the POC.**
 
-The validated value is then interpolated directly into a shell string and executed:
+The validated value is then interpolated directly into a shell string `shell=True` and executed:
 
 ```python
 cmd = '({nmap} {params} --script={script_dir} -oX /tmp/{filename}.active {target} > /tmp/nmap_scan.log 2>&1; mv /tmp/{filename}.active /opt/xml/{filename} >> /tmp/nmap_scan.log 2>&1) &'.format(
