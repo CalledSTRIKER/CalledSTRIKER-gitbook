@@ -233,19 +233,23 @@ With 100K+ pulls, a lot of people have run WebMap's default command exactly as w
 
 I reported this through a GitHub security advisory. I was so excited for my first CVE that I couldn't wait so I did some OSINT and found the maintainer's LinkedIn profile, and reached out directly to gently ask them to review the advisory urgently.
 
-Setting aside how they were disrespectful, they told me the project is just for fun and that **it must only run on localhost or it's the user's problem**, ignoring that their own repository download & usage instructions is what exposes it by default, and ignoring the severity and scale of real users affected, and how popular the project is. Then blocked me.
+Setting aside how they were disrespectful, they told me the **project is just for fun and that it must only run on localhost or it's the user's problem.**
 
-They later closed the advisory without warning users, and without crediting my research or requesting a CVE assignment. I was also removed as a collaborator from the advisory.
+Ignoring that their own repository usage instructions is what exposes it by default, and ignoring scale of users affected, and how popular the project is.&#x20;
+
+Moreover, **localhost applications shouldn't be vulnerable to unauthenticated remote code execution,** so that's not an argument.
+
+<figure><img src="../.gitbook/assets/600580814-98d8dc22-aa1d-45cf-baba-889b5df906e5.png" alt=""><figcaption><p>How he is behaving</p></figcaption></figure>
+
+They later blocked me and closed the advisory without crediting my research. I was also removed as a collaborator from the advisory :
 
 <figure><img src="../.gitbook/assets/image (57).png" alt=""><figcaption><p>The maintainer closed the GitHub Security Advisory without publication</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (67).png" alt="" width="375"><figcaption><p>The maintainer removed me as a collaborator on the Advisory</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/600580814-98d8dc22-aa1d-45cf-baba-889b5df906e5.png" alt=""><figcaption><p>How he is behaving</p></figcaption></figure>
+**A fix was eventually pushed silently to master branch** with no mention of a vulnerability anywhere, without warning users, and no credit to the person who found it.&#x20;
 
-What's interesting is that he works in the cyber security field too.
-
-**A fix was eventually pushed silently to master branch** without crediting me and with no mention of a vulnerability anywhere. This was a stupid, cowardly move on his part. Not a word about it, nothing. Just a man too insecure to admit someone else found what he missed.
+This was a stupid, cowardly move on his part. Not a word about it, nothing. Just a man too insecure to admit someone else found what he missed.
 
 This repository has no version tags, no releases, everything goes straight to master, so users have no way of knowing anything changed unless they are watching commits.
 
