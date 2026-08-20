@@ -135,7 +135,7 @@ Now, we successfully leveraged the command injection to achieve **Interactive re
 
 This is considered an **authenticated remote code execution**, it's good, but wasn't enough for me.
 
-So I tried the very simple way to bypass it:
+So I tried the very simple way to bypass the **authentication mechanism**:
 
 1. Opened a new repeater tab
 2. Removed the session cookie
@@ -146,12 +146,12 @@ And here is the surprise :
 
 **Authentication was not ENFORCED in this endpoint!**
 
-This leaves us with CSRF tokens, you have two tokens:
+This leaves us with CSRF tokens, In order to access the endpoint you need to have both of them:
 
 * `csrfmiddlewaretoken` parameter
 * `csrftoken` cookie
 
-You can collect both of them when you visit the login page so it's not a matter of concern.
+You can collect them at the login page so it's not a matter of concern.
 
 Full Proof of concept will be at the end of this page.
 
