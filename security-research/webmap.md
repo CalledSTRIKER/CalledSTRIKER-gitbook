@@ -247,11 +247,13 @@ They later blocked me and closed the advisory without crediting my research. I w
 
 <figure><img src="../.gitbook/assets/image (67).png" alt="" width="375"><figcaption><p>The maintainer removed me as a collaborator on the Advisory</p></figcaption></figure>
 
-**A fix was eventually pushed silently to master branch** with no mention of a vulnerability anywhere, without warning users, and no credit to the person who found it.
+**A fix was eventually pushed silently to the repository** with no mention of a vulnerability anywhere, without warning users, and no credit to the person who found it.
 
 This was a stupid, cowardly move on his part. Not a word about it, nothing. Just a man too insecure to admit someone else found what he missed.
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>Silent patch</p></figcaption></figure>
+<div align="center"><figure><img src="../.gitbook/assets/image (4).png" alt="" width="306"><figcaption><p>Silent patch</p></figcaption></figure></div>
+
+<div align="left"><figure><img src="../.gitbook/assets/image (16).png" alt=""><figcaption><p>Silent patch</p></figcaption></figure></div>
 
 This repository has no version tags, no releases, everything goes straight to master, so users have no way of knowing anything changed unless they are watching commits.
 
