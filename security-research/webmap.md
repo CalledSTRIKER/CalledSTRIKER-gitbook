@@ -251,6 +251,8 @@ They later blocked me and closed the advisory without crediting my research. I w
 
 This was a stupid, cowardly move on his part. Not a word about it, nothing. Just a man too insecure to admit someone else found what he missed.
 
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>Silent patch</p></figcaption></figure>
+
 This repository has no version tags, no releases, everything goes straight to master, so users have no way of knowing anything changed unless they are watching commits.
 
 Because of how this was handled I submitted a CVE request to VulDB.
