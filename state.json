@@ -1,5 +1,9 @@
 {
   "htb_machines": {
+    "519": {
+      "name": "Soccer",
+      "difficulty": "Easy"
+    },
     "255": {
       "name": "Blackfield",
       "difficulty": "Hard"
