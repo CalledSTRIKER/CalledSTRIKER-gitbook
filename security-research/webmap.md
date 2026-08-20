@@ -173,7 +173,7 @@ The bug is in that `\s`. Python's re module treats `\s` as matching whitespace, 
 
 **The `target` parameter is vulnerable too. it also allows the `/` character, so we can skip the `index.html` part and download the file directly which what we will do in the POC.**
 
-The validated value is then interpolated directly into a shell string `shell=True` and executed:
+The validated value is then interpolated directly into a shell string and executed:
 
 ```python
 cmd = '({nmap} {params} --script={script_dir} -oX /tmp/{filename}.active {target} > /tmp/nmap_scan.log 2>&1; mv /tmp/{filename}.active /opt/xml/{filename} >> /tmp/nmap_scan.log 2>&1) &'.format(
@@ -186,6 +186,8 @@ cmd = '({nmap} {params} --script={script_dir} -oX /tmp/{filename}.active {target
 
 subprocess.Popen(cmd, shell=True)
 ```
+
+Because `shell=True` is used, we could break out of the nmap command and run other commands.
 
 The dashboard page checks for a session token before rendering, but the scan creation endpoint (`/api/v1/nmap/scan/new`) performs no such check, so the vulnerability is reachable directly without ever passing the dashboard's login:
 
