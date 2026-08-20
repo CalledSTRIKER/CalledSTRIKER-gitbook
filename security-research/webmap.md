@@ -235,7 +235,7 @@ I reported this through a GitHub security advisory. I was so excited for my firs
 
 Setting aside how they were disrespectful, they told me the **project is just for fun and that it must only run on localhost or it's the user's problem.**
 
-Ignoring that their own repository usage instructions is what exposes it by default, and ignoring scale of users affected, and how popular the project is.&#x20;
+Ignoring that their own repository usage instructions is what exposes it by default, and ignoring scale of users affected, and how popular the project is.
 
 Moreover, **localhost applications shouldn't be vulnerable to unauthenticated remote code execution,** so that's not an argument.
 
@@ -247,7 +247,7 @@ They later blocked me and closed the advisory without crediting my research. I w
 
 <figure><img src="../.gitbook/assets/image (67).png" alt="" width="375"><figcaption><p>The maintainer removed me as a collaborator on the Advisory</p></figcaption></figure>
 
-**A fix was eventually pushed silently to master branch** with no mention of a vulnerability anywhere, without warning users, and no credit to the person who found it.&#x20;
+**A fix was eventually pushed silently to master branch** with no mention of a vulnerability anywhere, without warning users, and no credit to the person who found it.
 
 This was a stupid, cowardly move on his part. Not a word about it, nothing. Just a man too insecure to admit someone else found what he missed.
 
@@ -259,36 +259,7 @@ Because of how this was handled I submitted a CVE request to VulDB.
 
 If you pulled the image or cloned the repo before this [commit](https://github.com/SabyasachiRana/WebMap/commit/3d52f65803a2716bff14d938352c6fef45b0cfb6) , you're on a vulnerable version. If your instance was reachable from any network you don't fully control, treat it as potentially compromised.
 
-If you are at or after that commit, this specific vulnerability was addressed. However the fix was not reviewed properly. The mitigation below is still recommended.
-
-### Mitigation
-
-Change your port binding from:
-
-```
--p 8000:8000
-```
-
-to:
-
-```
--p 127.0.0.1:8000:8000
-```
-
-Full corrected command:
-
-```bash
-docker run -d \
-    --name webmap \
-    -h webmap \
-    -p 127.0.0.1:8000:8000 \
-    -v ./_container/xml:/opt/xml \
-    -v ./_container/notes:/opt/notes \
-    -v ./_container/schedule:/opt/schedule \
-    ghcr.io/sabyasachirana/webmap
-```
-
-This limits access to the local machine and significantly cuts the attack surface, but it does not fix the underlying vulnerability. Anyone with any other foothold on the host can still reach and exploit the service. The only real fix is running a version at or after commit `3d52f65`.
+If you are at or after that commit, this specific vulnerability was addressed.
 
 ### Proof of concept
 
