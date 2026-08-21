@@ -1,5 +1,9 @@
 {
   "htb_machines": {
+    "556": {
+      "name": "Keeper",
+      "difficulty": "Easy"
+    },
     "114": {
       "name": "Jeeves",
       "difficulty": "Medium"
