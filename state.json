@@ -1,5 +1,9 @@
 {
   "htb_machines": {
+    "156": {
+      "name": "Access",
+      "difficulty": "Easy"
+    },
     "583": {
       "name": "Monitored",
       "difficulty": "Medium"
