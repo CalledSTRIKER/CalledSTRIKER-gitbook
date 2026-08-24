@@ -1,5 +1,9 @@
 {
   "htb_machines": {
+    "603": {
+      "name": "BoardLight",
+      "difficulty": "Easy"
+    },
     "156": {
       "name": "Access",
       "difficulty": "Easy"
