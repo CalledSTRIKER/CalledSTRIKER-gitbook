@@ -1,5 +1,9 @@
 {
   "htb_machines": {
+    "571": {
+      "name": "Aero",
+      "difficulty": "Medium"
+    },
     "603": {
       "name": "BoardLight",
       "difficulty": "Easy"
