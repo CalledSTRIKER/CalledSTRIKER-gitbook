@@ -1,5 +1,9 @@
 {
   "htb_machines": {
+    "203": {
+      "name": "Networked",
+      "difficulty": "Easy"
+    },
     "571": {
       "name": "Aero",
       "difficulty": "Medium"
