@@ -1,5 +1,9 @@
 {
   "htb_machines": {
+    "201": {
+      "name": "Heist",
+      "difficulty": "Easy"
+    },
     "559": {
       "name": "CozyHosting",
       "difficulty": "Easy"
