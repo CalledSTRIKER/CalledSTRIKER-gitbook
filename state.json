@@ -1,5 +1,13 @@
 {
   "htb_machines": {
+    "559": {
+      "name": "CozyHosting",
+      "difficulty": "Easy"
+    },
+    "608": {
+      "name": "Editorial",
+      "difficulty": "Easy"
+    },
     "600": {
       "name": "Mailing",
       "difficulty": "Easy"
