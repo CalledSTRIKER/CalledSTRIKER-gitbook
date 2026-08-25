@@ -1,5 +1,9 @@
 {
   "htb_machines": {
+    "600": {
+      "name": "Mailing",
+      "difficulty": "Easy"
+    },
     "203": {
       "name": "Networked",
       "difficulty": "Easy"
