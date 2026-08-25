@@ -1,5 +1,9 @@
 {
   "htb_machines": {
+    "661": {
+      "name": "Puppy",
+      "difficulty": "Medium"
+    },
     "201": {
       "name": "Heist",
       "difficulty": "Easy"
