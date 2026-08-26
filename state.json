@@ -1,5 +1,13 @@
 {
   "htb_machines": {
+    "651": {
+      "name": "Dog",
+      "difficulty": "Easy"
+    },
+    "684": {
+      "name": "Editor",
+      "difficulty": "Easy"
+    },
     "638": {
       "name": "LinkVortex",
       "difficulty": "Easy"
