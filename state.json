@@ -1,5 +1,9 @@
 {
   "htb_machines": {
+    "638": {
+      "name": "LinkVortex",
+      "difficulty": "Easy"
+    },
     "746": {
       "name": "BabyTwo",
       "difficulty": "Medium"
