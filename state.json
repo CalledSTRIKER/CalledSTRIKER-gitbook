@@ -1,5 +1,9 @@
 {
   "htb_machines": {
+    "597": {
+      "name": "Usage",
+      "difficulty": "Easy"
+    },
     "651": {
       "name": "Dog",
       "difficulty": "Easy"
