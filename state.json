@@ -1,5 +1,13 @@
 {
   "htb_machines": {
+    "648": {
+      "name": "Titanic",
+      "difficulty": "Easy"
+    },
+    "672": {
+      "name": "Outbound",
+      "difficulty": "Easy"
+    },
     "597": {
       "name": "Usage",
       "difficulty": "Easy"
