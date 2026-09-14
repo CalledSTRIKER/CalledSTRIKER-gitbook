@@ -1,4 +1,6 @@
-# CVE-2026-90843
+# WebMap: CVE-2026-90843
+
+
 
 <figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
@@ -236,6 +238,8 @@ With 100K+ pulls, a lot of people have run WebMap's default command exactly as w
 ### What the Maintainer Did
 
 I reported this through a GitHub security advisory. I was so excited for my first CVE that I couldn't wait so I did some OSINT and found the maintainer's LinkedIn profile, and reached out directly to gently ask them to review the advisory urgently.
+
+<figure><img src="../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
 
 Setting aside how they were disrespectful, they told me the **project is just for fun and that it must only run on localhost or it's the user's problem.**
 
