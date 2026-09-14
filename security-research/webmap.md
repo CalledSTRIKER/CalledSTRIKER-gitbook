@@ -18,6 +18,12 @@ All versions up to (including) this [commit](https://github.com/SabyasachiRana/W
 
 This vulnerability is referenced by [CVE-2026-90843](https://nvd.nist.gov/vuln/detail/cve-2026-90843)
 
+#### **Update - 2026/09/14**
+
+The maintainer decided to delete the repository after the CVE release 😂.
+
+Here is the [web archive version](https://web.archive.org/web/20260307210428/https://github.com/SabyasachiRana/WebMap).
+
 ### Two Separate Problems
 
 This issue is two problems stacked on top of each other:
