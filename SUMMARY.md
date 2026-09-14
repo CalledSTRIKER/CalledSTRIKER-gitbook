@@ -4,7 +4,7 @@
 
 ## Security Research
 
-* [WebMap - CVE-2026-90843](security-research/webmap.md)
+* [WebMap: CVE-2026-90843](security-research/webmap.md)
 
 ## HackTheBox
 
