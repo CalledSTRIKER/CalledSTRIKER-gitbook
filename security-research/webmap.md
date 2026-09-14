@@ -1,4 +1,4 @@
-# WebMap
+# CVE-2026-90843
 
 <figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
@@ -12,7 +12,9 @@ The official Docker deployment instructions bind the service to all network inte
 
 All versions up to (including) this [commit](https://github.com/SabyasachiRana/WebMap/commit/8b95fe4dc301a3c09ddf145b895de0bf9f8d2a25) is vulnerable.
 
-This bug has been present since 2019 and it's fixed in this [commit](https://github.com/SabyasachiRana/WebMap/commit/3d52f65803a2716bff14d938352c6fef45b0cfb6).
+**This bug has been present since 2019** and it's fixed in this [commit](https://github.com/SabyasachiRana/WebMap/commit/3d52f65803a2716bff14d938352c6fef45b0cfb6).
+
+This vulnerability is referenced by [CVE-2026-90843](https://nvd.nist.gov/vuln/detail/cve-2026-90843)
 
 ### Two Separate Problems
 
@@ -249,13 +251,13 @@ They later blocked me and closed the advisory without crediting my research:
 
 **A fix was eventually pushed silently to the repository** with no mention of a vulnerability anywhere, without warning users, and no credit to the person who found it.
 
-This was a stupid, cowardly move on his part. A man that's too insecure to admit someone else found what he missed.
+This was a cowardly move on his part. A man that's too insecure to admit someone else found what he missed.
 
 <div align="center"><figure><img src="../.gitbook/assets/image (4).png" alt="" width="306"><figcaption><p>Silent patch</p></figcaption></figure></div>
 
 This repository has no version tags, no releases, everything goes straight to master, so users have no way of knowing anything changed unless they are watching commits.
 
-Because of how this was handled I submitted a CVE request to VulDB.
+Because of how this was handled I submitted a CVE request independently.
 
 ### Am I Affected?
 
