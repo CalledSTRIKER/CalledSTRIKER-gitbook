@@ -1,5 +1,9 @@
 {
   "htb_machines": {
+    "981": {
+      "name": "Management",
+      "difficulty": "Easy"
+    },
     "699": {
       "name": "Lock",
       "difficulty": "Easy"
