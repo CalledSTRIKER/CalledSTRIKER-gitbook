@@ -1,5 +1,9 @@
 {
   "htb_machines": {
+    "990": {
+      "name": "Stream",
+      "difficulty": "Medium"
+    },
     "981": {
       "name": "Management",
       "difficulty": "Easy"
