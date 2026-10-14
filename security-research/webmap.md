@@ -1,7 +1,5 @@
 # WebMap: CVE-2026-90843
 
-
-
 <figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Summary
@@ -260,8 +258,6 @@ They later blocked me and closed the advisory without crediting my research:
 <figure><img src="../.gitbook/assets/image (67).png" alt="" width="375"><figcaption><p>The maintainer removed me as a collaborator on the Advisory</p></figcaption></figure>
 
 **A fix was eventually pushed silently to the repository** with no mention of a vulnerability anywhere, without warning users, and no credit to the person who found it.
-
-This was a cowardly move on his part. A man that's too insecure to admit someone else found what he missed.
 
 <div align="center"><figure><img src="../.gitbook/assets/image (4).png" alt="" width="306"><figcaption><p>Silent patch</p></figcaption></figure></div>
 
