@@ -1,5 +1,9 @@
 {
   "htb_machines": {
+    "948": {
+      "name": "Nexus",
+      "difficulty": "Easy"
+    },
     "990": {
       "name": "Stream",
       "difficulty": "Medium"
