@@ -4,7 +4,13 @@ icon: swords
 
 # ABOUT ME
 
+
+
+
+
 <div align="center"><img src="https://readme-typing-svg.herokuapp.com/?font=Fira+Code&#x26;weight=600&#x26;size=24&#x26;pause=1000&#x26;color=AA0A0A&#x26;center=true&#x26;vCenter=true&#x26;width=500&#x26;lines=PENETRATION+TESTER;OFFENSIVE+SECURITY+RESEARCHER;WEB+SECURITY+EXPERT" alt=""></div>
+
+
 
 <div data-full-width="true"><figure><img src="https://raw.githubusercontent.com/CalledSTRIKER/CalledSTRIKER/refs/heads/main/assets/htb-stats.svg" alt=""><figcaption></figcaption></figure></div>
 
@@ -18,13 +24,10 @@ icon: swords
 
 ***
 
-<!-- OWNED_SECTION_START -->
 ## 🗡️ Owned Machines
 
 **HackTheBox**
 
-<img src='assets/htb_bar.svg' width='100%'>
+<img src=".gitbook/assets/htb_bar (6).svg" alt="" width="100%">
 
 <sub>Last updated: 2026-10-15 04:08 KSA</sub>
-
-<!-- OWNED_SECTION_END -->
