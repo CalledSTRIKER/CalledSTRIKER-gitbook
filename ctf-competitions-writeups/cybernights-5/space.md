@@ -122,6 +122,6 @@ And we finally got the `flag`!
 
 
 
-> After my experience have increased, I could have idenitfied the database vendor first (in this case it was SQLite), and query the schema/table containg tables metadata ( in this case sqlite\_master ).&#x20;
+> After my experience have evolved, I could have idenitfied the database vendor first (in this case it was SQLite), and query the schema/table containg tables metadata ( in this case sqlite\_master ).&#x20;
 >
 > So there was no guessing needed.
