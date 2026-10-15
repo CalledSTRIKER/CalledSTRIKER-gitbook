@@ -1,3 +1,8 @@
+---
+tags:
+  - web
+---
+
 # Watermelon
 
 I will list here the functions and classes that might be interesting for us :

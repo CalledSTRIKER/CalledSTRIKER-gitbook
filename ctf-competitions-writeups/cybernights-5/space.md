@@ -1,3 +1,8 @@
+---
+tags:
+  - web
+---
+
 # Space
 
 ### Taking a look
@@ -67,7 +72,7 @@ so it might be `Blind SQL injection`.
 
 ### The final chapter
 
-Now lets firstly test for `Blind SQL injection - Error based`. You can use this payload to guess the table name :
+Now lets firstly test for `Blind SQL injection - Boolean based`. You can use this payload to guess the table name :
 
 ```
 'or (select 1 from table_name limit 0,1)=1 /*

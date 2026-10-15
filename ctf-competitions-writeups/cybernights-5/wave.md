@@ -1,3 +1,8 @@
+---
+tags:
+  - forensics
+---
+
 # Wave
 
 After extracting the zip file, we can obviously see a `pcap` file, which stores captured network packets. So we will use wireshark.

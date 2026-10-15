@@ -1,3 +1,8 @@
+---
+tags:
+  - web
+---
+
 # Free Flag
 
 {% code title="index.php" %}

@@ -1,3 +1,8 @@
+---
+tags:
+  - web
+---
+
 # Notey
 
 For the purpose of simplicity I will list here only important functions and files.

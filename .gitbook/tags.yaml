@@ -16,3 +16,6 @@
 - tag: easy
   label: Easy
   color: $success
+- tag: forensics
+  label: Forensics
+  color: $success
