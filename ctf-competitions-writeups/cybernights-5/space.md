@@ -119,3 +119,9 @@ Assuming that the column is named `flag`, we will use the previous script to dum
 And we finally got the `flag`!
 
 <figure><img src="../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
+
+
+
+> After my experience have increased, I could have idenitfied the database vendor first (in this case it was SQLite), and query the schema/table containg tables metadata ( in this case sqlite\_master ).&#x20;
+>
+> So there was no guessing needed.
