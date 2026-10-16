@@ -31,6 +31,6 @@ icon: swords
 
 <img src='assets/htb_bar.svg' width='100%'>
 
-<sub>Last updated: 2026-10-16 15:54 KSA</sub>
+<sub>Last updated: 2026-10-16 20:07 KSA</sub>
 
 <!-- OWNED_SECTION_END -->
