@@ -1,5 +1,9 @@
 {
   "htb_machines": {
+    "184": {
+      "name": "Unattended",
+      "difficulty": "Medium"
+    },
     "948": {
       "name": "Nexus",
       "difficulty": "Easy"
