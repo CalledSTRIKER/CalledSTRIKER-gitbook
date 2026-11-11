@@ -1,5 +1,9 @@
 {
   "htb_machines": {
+    "695": {
+      "name": "Sweep",
+      "difficulty": "Medium"
+    },
     "680": {
       "name": "Reset",
       "difficulty": "Easy"
