@@ -1,5 +1,9 @@
 {
   "htb_machines": {
+    "680": {
+      "name": "Reset",
+      "difficulty": "Easy"
+    },
     "184": {
       "name": "Unattended",
       "difficulty": "Medium"
