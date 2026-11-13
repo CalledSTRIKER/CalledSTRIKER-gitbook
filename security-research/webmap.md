@@ -10,17 +10,27 @@ A gap in the input validation regex for the `params` & `target` parameters lets 
 
 The official Docker deployment instructions bind the service to all network interfaces by default, so anyone who followed the README is likely exposed to the internet.
 
-All versions up to (including) this [commit](https://github.com/SabyasachiRana/WebMap/commit/8b95fe4dc301a3c09ddf145b895de0bf9f8d2a25) is vulnerable.
+All versions up to (including) `8b95fe4dc301a3c09ddf145b895de0bf9f8d2a25` commit is **vulnerable**.
 
-**This bug has been present since 2019** and it's fixed in this [commit](https://github.com/SabyasachiRana/WebMap/commit/3d52f65803a2716bff14d938352c6fef45b0cfb6).
+**This bug has been present since 2019** and it's fixed in the `3d52f65803a2716bff14d938352c6fef45b0cfb6` commit.
 
-This vulnerability is referenced by [CVE-2026-90843](https://nvd.nist.gov/vuln/detail/cve-2026-90843)
+This vulnerability is referenced by [CVE-2026-90843](https://nvd.nist.gov/vuln/detail/cve-2026-90843).
 
 #### **Update - 2026/09/14**
 
-The maintainer decided to delete the repository after the CVE release 😂.
+The maintainer decided to delete the repository after the CVE release 😂.&#x20;
 
-Here is the [web archive version](https://web.archive.org/web/20260307210428/https://github.com/SabyasachiRana/WebMap).
+The web archive link have been put instead of the original repository link.&#x20;
+
+Here is a [local copy of the vulnerable repository](https://github.com/CalledSTRIKER/CalledSTRIKER-gitbook/raw/refs/heads/main/security-research/webmap-8b95fe4.bundle).
+
+After downloading the local copy, make sure to run:
+
+{% code title="bash" %}
+```bash
+git clone webmap-8b95fe4.bundle WebMap
+```
+{% endcode %}
 
 ### Two Separate Problems
 
@@ -238,32 +248,6 @@ Docker gives no warning about this; nothing tells you this container is now expo
 Flask, for comparison, binds to localhost by default when you run `app.run(port=8000)`.
 
 With 100K+ pulls, a lot of people have run WebMap's default command exactly as written.
-
-### What the Maintainer Did
-
-I reported this through a GitHub security advisory. I was so excited for my first CVE that I couldn't wait so I did some OSINT and found the maintainer's LinkedIn profile, and reached out directly to gently ask them to review the advisory urgently.
-
-<figure><img src="../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
-
-Setting aside how they were disrespectful, they told me the **project is just for fun and that it must only run on localhost or it's the user's problem.**
-
-Ignoring that their own repository usage instructions is what exposes it by default, and ignoring scale of users affected, and how popular the project is.
-
-Moreover, **localhost applications shouldn't be vulnerable to unauthenticated remote code execution,** so that's not an argument.
-
-<figure><img src="../.gitbook/assets/600580814-98d8dc22-aa1d-45cf-baba-889b5df906e5.png" alt=""><figcaption><p>How he is behaving</p></figcaption></figure>
-
-They later blocked me and closed the advisory without crediting my research:
-
-<figure><img src="../.gitbook/assets/image (67).png" alt="" width="375"><figcaption><p>The maintainer removed me as a collaborator on the Advisory</p></figcaption></figure>
-
-**A fix was eventually pushed silently to the repository** with no mention of a vulnerability anywhere, without warning users, and no credit to the person who found it.
-
-<div align="center"><figure><img src="../.gitbook/assets/image (4).png" alt="" width="306"><figcaption><p>Silent patch</p></figcaption></figure></div>
-
-This repository has no version tags, no releases, everything goes straight to master, so users have no way of knowing anything changed unless they are watching commits.
-
-Because of how this was handled I submitted a CVE request independently.
 
 ### Am I Affected?
 
